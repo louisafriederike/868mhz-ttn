@@ -66,8 +66,8 @@ void loop()
   dtostrf(light,3,0,buf);
   String message = String(light);
   u8g2.clearBuffer();          // clear the internal memory
-//  u8g2.setFont(u8g2_font_inr21_mf);
-//  u8g2.drawGlyph(5, 20, 0x2615);
+  u8g2.setFont(u8g2_font_inr21_mf);
+  u8g2.drawGlyph(5, 20, 0x2615);
   u8g2.drawStr(15, 20, light);
 //  u8g2.print(analogRead(LightPin));
   u8g2.sendBuffer();          // transfer internal memory to the display

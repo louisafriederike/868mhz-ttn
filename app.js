@@ -46,9 +46,6 @@ var server = http.createServer(function(req, res){
 
 // var io = require('socket.io')(server);
 
-
-  
-// app.use(express.static(path.join(__dirname, "public")));
 app.use(bodyParser.json());
 
 app.post("/lorawan", (req, res) => {
@@ -56,7 +53,11 @@ app.post("/lorawan", (req, res) => {
     res.status(200).end() // Responding is important
   });
   
-app.listen(port, () => console.log(`🚀 Server running on port ${port}`))
+app.use(express.static(path.join(__dirname, "public")));
+
+app.listen(port, () => console.log(`:rocket: Server running on port ${port}`))
+  
+
 
 // io.on('connection', function(socket){
 

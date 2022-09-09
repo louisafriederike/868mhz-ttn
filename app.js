@@ -1,27 +1,27 @@
-// var http = require('http');
+var http = require('http');
 var ttn = require("ttn");
-// var fs = require('fs');
-// var express = require('express');
-// var app = express();
-// var path = require('path');
-// var index = fs.readFileSync('index.html');
-// var server = http.createServer(app);
-// var port = 8000;
+var fs = require('fs');
+var express = require('express');
+var app = express();
+var path = require('path');
+var index = fs.readFileSync('index.html');
+var server = http.createServer(app);
+var port = 8000;
 
-var appID = "node1-ttn"
-var accessKey = "C17447705E8DEDDC0392B683A0FB0643"
+// var appID = "node1-ttn"
+// var accessKey = "C17447705E8DEDDC0392B683A0FB0643"
 
-ttn.data(appID, accessKey)
-  .then(function (client) {
-    client.on("uplink", function (devID, payload) {
-      console.log("Received uplink from ", devID)
-      console.log(payload)
-    })
-  })
-  .catch(function (error) {
-    console.error("Error", error)
-    process.exit(1)
-  })
+// ttn.data(appID, accessKey)
+//   .then(function (client) {
+//     client.on("uplink", function (devID, payload) {
+//       console.log("Received uplink from ", devID)
+//       console.log(payload)
+//     })
+//   })
+//   .catch(function (error) {
+//     console.error("Error", error)
+//     process.exit(1)
+//   })
 
 // const { SerialPort } = require('serialport')
 // const { ReadlineParser } = require('@serialport/parser-readline')
@@ -30,50 +30,50 @@ ttn.data(appID, accessKey)
 // const parser = sport.pipe(new ReadlineParser({ delimiter: '\r\n' }))
 // parser.on('data', console.log)
 
-// server.listen(port, () => {
-//     console.log("Server is listening at port %d", port);
-// });
+server.listen(port, () => {
+    console.log("Server is listening at port %d", port);
+});
 
-// app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "public")));
+// app.post("/lorawan", handler);
 
+var server = http.createServer(function(req, res){
 
-// var server = http.createServer(function(req, res){
+    res.writeHead(200, {'Content-Type':'text/html'});
 
-//     res.writeHead(200, {'Content-Type':'text/html'});
+    res.end(index);
 
-//     res.end(index);
+});
 
-// });
+var io = require('socket.io')(server);
 
-// var io = require('socket.io')(server);
+io.on('connection', function(socket){
 
-// io.on('connection', function(socket){
-
-//     parser.on('data', function(data) {    
-//         const msg = data.split(' ');
-//         console.log(msg[0], msg[1]);
-//         io.emit(msg[0], msg[1]);      
-//     }); 
+    parser.on('data', function(data) {    
+        const msg = data.split(' ');
+        console.log(msg[0], msg[1]);
+        io.emit(msg[0], msg[1]);      
+    }); 
     
-//     console.log('Node.js is listening :)');
-//     socket.on("hello", (arg, callback) => {
-//     console.log("hellohelo"); // "world"
-//     io.emit('world');
+    console.log('Node.js is listening :)');
+    socket.on("hello", (arg, callback) => {
+    console.log("hellohelo"); // "world"
+    io.emit('world');
 
-//     }); 
+    }); 
 
-//     socket.on('chat message', (msg) => {
-//         console.log('[user]['+ socket.id + '][' + msg + ']');
-//     }); 
+    socket.on('chat message', (msg) => {
+        console.log('[user]['+ socket.id + '][' + msg + ']');
+    }); 
 
-//     socket.on('userposition', (msg) => {
-//         console.log('[user]['+ socket.id + '][position: ' + msg[0] + ',' + msg[1]+ ']');
-//         socket.to('expo').emit(socket.id, msg);
-//     }); 
+    socket.on('userposition', (msg) => {
+        console.log('[user]['+ socket.id + '][position: ' + msg[0] + ',' + msg[1]+ ']');
+        socket.to('expo').emit(socket.id, msg);
+    }); 
 
     
 
-// });
+});
 
 
 

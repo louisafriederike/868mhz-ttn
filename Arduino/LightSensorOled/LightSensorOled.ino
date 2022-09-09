@@ -12,7 +12,7 @@ U8G2_SH1106_128X32_VISIONOX_F_HW_I2C u8g2(U8G2_R0, /* reset=*/ U8X8_PIN_NONE);
 
 // Set your AppEUI and AppKey
 const char *appEui = "0000000000000000";
-const char *appKey = "C17447705E8DEDDC0392B683A0FB0643";
+const char *appKey = "672F08DA6B5A1F2D7DD8F91EB1000D6B";
 
 //define AnalogPin for sensor
 #define LightPin A0

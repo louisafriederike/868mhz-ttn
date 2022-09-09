@@ -7,7 +7,7 @@ var path = require('path');
 var index = fs.readFileSync('index.html');
 var server = http.createServer(app);
 var port = 8000;
-const bodyParser = require("body-parser")
+const bodyParser = require("body-parser");
 
 // var appID = "node1-ttn"
 // var accessKey = "C17447705E8DEDDC0392B683A0FB0643"
@@ -51,7 +51,7 @@ app.post("/lorawan", (req, res) => {
     res.status(200).end() // Responding is important
   });
   
-app.use(express.static(path.join(__dirname, "public")));
+// app.use(express.static(path.join(__dirname, "public")));
 app.use(bodyParser.json());
 app.listen(port, () => console.log(`🚀 Server running on port ${port}`))
 

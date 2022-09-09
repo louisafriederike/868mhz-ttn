@@ -7,6 +7,7 @@ var path = require('path');
 var index = fs.readFileSync('index.html');
 var server = http.createServer(app);
 var port = 8000;
+const bodyParser = require("body-parser")
 
 // var appID = "node1-ttn"
 // var accessKey = "C17447705E8DEDDC0392B683A0FB0643"
@@ -30,12 +31,10 @@ var port = 8000;
 // const parser = sport.pipe(new ReadlineParser({ delimiter: '\r\n' }))
 // parser.on('data', console.log)
 
-server.listen(port, () => {
-    console.log("Server is listening at port %d", port);
-});
+// server.listen(port, () => {
+//     console.log("Server is listening at port %d", port);
+// });
 
-app.use(express.static(path.join(__dirname, "public")));
-// app.post("/lorawan", handler);
 
 var server = http.createServer(function(req, res){
 
@@ -45,35 +44,44 @@ var server = http.createServer(function(req, res){
 
 });
 
-var io = require('socket.io')(server);
+// var io = require('socket.io')(server);
 
-io.on('connection', function(socket){
+app.post("/lorawan", (req, res) => {
+    console.log(req.body) // Call your action on the request here
+    res.status(200).end() // Responding is important
+  });
+  
+app.use(express.static(path.join(__dirname, "public")));
+app.use(bodyParser.json());
+app.listen(port, () => console.log(`🚀 Server running on port ${port}`))
 
-    parser.on('data', function(data) {    
-        const msg = data.split(' ');
-        console.log(msg[0], msg[1]);
-        io.emit(msg[0], msg[1]);      
-    }); 
+// io.on('connection', function(socket){
+
+//     parser.on('data', function(data) {    
+//         const msg = data.split(' ');
+//         console.log(msg[0], msg[1]);
+//         io.emit(msg[0], msg[1]);      
+//     }); 
     
-    console.log('Node.js is listening :)');
-    socket.on("hello", (arg, callback) => {
-    console.log("hellohelo"); // "world"
-    io.emit('world');
+//     console.log('Node.js is listening :)');
+//     socket.on("hello", (arg, callback) => {
+//     console.log("hellohelo"); // "world"
+//     io.emit('world');
 
-    }); 
+//     }); 
 
-    socket.on('chat message', (msg) => {
-        console.log('[user]['+ socket.id + '][' + msg + ']');
-    }); 
+//     socket.on('chat message', (msg) => {
+//         console.log('[user]['+ socket.id + '][' + msg + ']');
+//     }); 
 
-    socket.on('userposition', (msg) => {
-        console.log('[user]['+ socket.id + '][position: ' + msg[0] + ',' + msg[1]+ ']');
-        socket.to('expo').emit(socket.id, msg);
-    }); 
+//     socket.on('userposition', (msg) => {
+//         console.log('[user]['+ socket.id + '][position: ' + msg[0] + ',' + msg[1]+ ']');
+//         socket.to('expo').emit(socket.id, msg);
+//     }); 
 
     
 
-});
+// });
 
 
 

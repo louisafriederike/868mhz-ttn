@@ -55,37 +55,37 @@ app.post("/lorawan", (req, res) => {
   
 app.use(express.static(path.join(__dirname, "public")));
 
-app.listen(port, () => console.log(`:rocket: Server running on port ${port}`))
+app.listen(port, () => console.log(`Server running on port ${port}`))
   
 
 
-// io.on('connection', function(socket){
+io.on('connection', function(socket){
 
-//     parser.on('data', function(data) {    
-//         const msg = data.split(' ');
-//         console.log(msg[0], msg[1]);
-//         io.emit(msg[0], msg[1]);      
-//     }); 
+    parser.on('data', function(data) {    
+        const msg = data.split(' ');
+        console.log(msg[0], msg[1]);
+        io.emit(msg[0], msg[1]);      
+    }); 
     
-//     console.log('Node.js is listening :)');
-//     socket.on("hello", (arg, callback) => {
-//     console.log("hellohelo"); // "world"
-//     io.emit('world');
+    console.log('Node.js is listening :)');
+    socket.on("hello", (arg, callback) => {
+    console.log("hello"); // "world"
+    io.emit('world');
 
-//     }); 
+    }); 
 
-//     socket.on('chat message', (msg) => {
-//         console.log('[user]['+ socket.id + '][' + msg + ']');
-//     }); 
+    socket.on('chat message', (msg) => {
+        console.log('[user]['+ socket.id + '][' + msg + ']');
+    }); 
 
-//     socket.on('userposition', (msg) => {
-//         console.log('[user]['+ socket.id + '][position: ' + msg[0] + ',' + msg[1]+ ']');
-//         socket.to('expo').emit(socket.id, msg);
-//     }); 
+    socket.on('userposition', (msg) => {
+        console.log('[user]['+ socket.id + '][position: ' + msg[0] + ',' + msg[1]+ ']');
+        socket.to('expo').emit(socket.id, msg);
+    }); 
 
     
 
-// });
+});
 
 
 

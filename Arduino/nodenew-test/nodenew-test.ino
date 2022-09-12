@@ -52,11 +52,13 @@ void loop(void)
   dtostrf(percent,3,0,buf);
   u8g2.clearBuffer(); 
   String message = String(percent);
-  u8g2.setFont(u8g2_font_bitcasual_tf);
-  u8g2.drawStr(0, 10, "#5 Gateway code:");
-  u8g2.drawStr(0, 20, buf);
+  u8g2.setFont(u8g2_font_littlemissloudonbold_tr);
+  u8g2.drawStr(0, 10, "node 5");
+  u8g2.drawStr(0, 20, "Gateway code:");
+  u8g2.drawStr(0, 30, buf);
+
            // transfer internal memory to the display
-  u8g2.sendBuffer();         
+          
   if(percent != prevPercent) {
   Serial.println(percent);
   byte payload[1];
@@ -64,11 +66,8 @@ void loop(void)
   ttn.sendBytes(payload, sizeof(payload));
   prevPercent = percent;
   futuretime = millis() + timetowait; // current time plus the timetowait
-  }
-  if(futuretime > millis()){ // checks the current time with the future time -> count down
-  u8g2.drawStr(0, 30, " connecting...");
-
-}
+  
+  }u8g2.sendBuffer(); 
   }
 //
 //    #ifdef HAS_DISPLAY

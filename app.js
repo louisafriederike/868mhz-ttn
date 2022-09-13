@@ -1,62 +1,39 @@
 var http = require('http');
-var ttn = require("ttn");
+// var ttn = require("ttn");
 var fs = require('fs');
 var express = require('express');
 var app = express();
 var path = require('path');
 // var index = fs.readFileSync('index.html');
-var server = http.createServer(app);
 var port = 8000;
 const bodyParser = require("body-parser");
-
-// var appID = "node1-ttn"
-// var accessKey = "C17447705E8DEDDC0392B683A0FB0643"
-
-// ttn.data(appID, accessKey)
-//   .then(function (client) {
-//     client.on("uplink", function (devID, payload) {
-//       console.log("Received uplink from ", devID)
-//       console.log(payload)
-//     })
-//   })
-//   .catch(function (error) {
-//     console.error("Error", error)
-//     process.exit(1)
-//   })
-
-// const { SerialPort } = require('serialport')
-// const { ReadlineParser } = require('@serialport/parser-readline')
-// const sport = new SerialPort({ path: '/dev/ttyACM0', baudRate: 115200 })
-
-// const parser = sport.pipe(new ReadlineParser({ delimiter: '\r\n' }))
-// parser.on('data', console.log)
-
-// server.listen(port, () => {
-//     console.log("Server is listening at port %d", port);
-// });
+const { Server } = require("socket.io");
 
 
-var server = http.createServer(function(req, res){
+var server = http.createServer(app);
 
-    res.writeHead(200, {'Content-Type':'text/html'});
 
-    res.end(index);
-
+const io = new Server(server);
+io.on('connection', (socket) => {
+  console.log('a user connected');
+   socket.emit('connection', { data:"Successfully connected" });
 });
-
-// var io = require('socket.io')(server);
 
 app.use(bodyParser.json());
 
 app.post("/lorawan", (req, res) => {
     console.log(req.body) // Call your action on the request here
+
+    io.emit('node5', { message:req.body.uplink_message });
     res.status(200).end() // Responding is important
   });
   
 app.use(express.static(path.join(__dirname, "public")));
 
-app.listen(port, () => console.log(`Server running on port ${port}`))
-  
+// app.listen(port, () => console.log(`Server running on port ${port}`))
+server.listen(8000, () => {
+  console.log('listening on *:8000');
+}); 
 
 
 // io.on('connection', function(socket){

@@ -1,16 +1,19 @@
 var socket = io();
-                           
+       
+socket.on('connection', function(data){
+    console.log(data);
+});
 socket.on('data', function(data){
     console.log(data);
     document.getElementById('sample').style.opacity = data+"%"; 
 });
 
-socket.on('node5', function(sensor){
-    console.log(sensor);
-    document.getElementById("file").value = sensor; 
-    if(distance5>0.02 && sensor==50){
-       alert('u won.');
-    }
+socket.on('node5', function(sensorData){
+    console.log(sensorData);
+    // document.getElementById("file").value = sensor; 
+    // if(distance5>0.02 && sensor==50){
+    //    alert('u won.');
+    // }
 });	
 
 var form = document.getElementById('form');

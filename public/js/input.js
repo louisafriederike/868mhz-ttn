@@ -9,12 +9,13 @@ socket.on('data', function(data){
 });
 
 socket.on('node5', function(sensorData){
-    console.log(sensorData);
+    var reading = sensorData.message.decoded_payload.bytes[0]
+    console.log("Sensor Reading",reading);
     // document.getElementById("file").value = sensor; 
     // if(distance5>0.02 && sensor==50){
     //    alert('u won.');
     // }
-});	
+});
 
 var form = document.getElementById('form');
 var input = document.getElementById('input');

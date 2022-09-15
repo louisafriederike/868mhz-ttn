@@ -3,18 +3,18 @@ var socket = io();
 socket.on('connection', function(data){
     console.log(data);
 });
-socket.on('data', function(data){
-    console.log(data);
-    document.getElementById('sample').style.opacity = data+"%"; 
-});
+// socket.on('data', function(data){
+//     console.log(data);
+//     document.getElementById('sample').style.opacity = data+"%"; 
+// });
 
 socket.on('node5', function(sensorData){
     var reading = sensorData.message.decoded_payload.bytes[0]
     console.log("Sensor Reading",reading);
     // document.getElementById("file").value = sensor; 
-    // if(distance5>0.02 && sensor==50){
-    //    alert('u won.');
-    // }
+     if(reading==11){
+       alert('u won.');
+     }
 });
 
 var form = document.getElementById('form');

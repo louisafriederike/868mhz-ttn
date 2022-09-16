@@ -9,9 +9,8 @@ socket.on('connection', function(data){
 // });
 
 socket.on('node5', function(sensorData){
-    var reading = sensorData.end_device_ids.dev_addr[0]
     var nodeID = sensorData.message.decoded_payload.bytes[0]
-    console.log("Sensor Reading",nodeID, reading);
+    console.log("Sensor Reading", reading);
     // document.getElementById("file").value = sensor; 
      if(reading==11){
        alert('u won.');
@@ -20,7 +19,7 @@ socket.on('node5', function(sensorData){
 
 socket.on('node4', function(sensorData){
     var reading = sensorData.message.decoded_payload.bytes[0]
-    console.log("Sensor Reading",reading);
+    console.log("Sensor Reading", reading);
     // document.getElementById("file").value = sensor; 
      if(reading==21){
        alert('u won 4.');

@@ -15,7 +15,7 @@ socket.on('node5', function(sensorData){
     console.log("Sensor Reading",reading); 
     // document.getElementById("file").value = sensor; 
      if(reading==11 && nodeID == "260BD7A6"){
-       alert('u won.');
+       alert('node5 unlocked.');
      }
 });
 

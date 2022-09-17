@@ -9,11 +9,12 @@ socket.on('connection', function(data){
 // });
 
 socket.on('node5', function(sensorData){
-    var reading = sensorData.message.decoded_payload.bytes[0]
+    var reading = sensorData.message.decoded_payload.bytes[0];
+    var nodeID = sensorData.dev_addr;
     console.log("Dev Address",sensorData.dev_addr);
     console.log("Sensor Reading",reading); 
     // document.getElementById("file").value = sensor; 
-     if(reading==11){
+     if(reading==11 && nodeID == "260BD7A6"){
        alert('u won.');
      }
 });

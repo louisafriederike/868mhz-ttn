@@ -10,8 +10,8 @@ socket.on('connection', function(data){
 
 socket.on('node5', function(sensorData){
     var reading = sensorData.message.decoded_payload.bytes[0]
-    console.log("Sensor Reading",reading);
-    console.log("Dev Address",sensorData.message.dev_addr);
+    console.log("Dev Address",sensorData.dev_addr);
+    console.log("Sensor Reading",reading); 
     // document.getElementById("file").value = sensor; 
      if(reading==11){
        alert('u won.');

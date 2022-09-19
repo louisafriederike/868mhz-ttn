@@ -13,12 +13,14 @@ socket.on('node5', function(sensorData){
     var nodeID = sensorData.dev_addr;
     console.log("Dev Address",sensorData.dev_addr);
     console.log("Sensor Reading",reading); 
+
+    if(nodeID == ) {}
     // document.getElementById("file").value = sensor; 
     //  if(reading==11 && nodeID=="260BD7A6"){
     //    alert('node5 unlocked.');
     //  }
-     if(reading==11){
-        alert('unlocked');
+     if(reading==11 && nodeID == "260B7965"){
+        alert('node 5 unlocked');
       }
 });
 

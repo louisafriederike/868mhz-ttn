@@ -10,6 +10,8 @@
 #include <Wire.h>
 #endif
 
+#define debugPrintLn true
+
 U8G2_SH1106_128X32_VISIONOX_F_HW_I2C u8g2(U8G2_R0, /* reset=*/ U8X8_PIN_NONE); 
 
 millisDelay codetimer;
@@ -38,7 +40,7 @@ void setup(void)
   debugSerial.begin(9600);
   // Wait a maximum of 10s for Serial Monitor
   while (!debugSerial && millis() < 10000);
-  ttn.onMessage(message);
+  //ttn.onMessage(message);
   ttn.join(appEui, appKey);
   u8g2.begin();
 }
@@ -46,49 +48,41 @@ void setup(void)
 
 void loop(void)
 { 
-  percent = round(analogRead(2) / 4095.00 * 100 + addedRandom);
+  percent = round(analogRead(2) / 1023.00 * 100 + addedRandom);
 
-
-     Serial.println("counter");
+     Serial.print("counter ");
      Serial.println(counter);
 
   if (percent != prevPercent){
-
-      Serial.println("node5");
-      Serial.println(percent);
-      prevPercent = percent;
-      futuretime = millis() + timetowait; 
-
-    }
-
+    Serial.println("node5");
+    Serial.println(percent);
+    prevPercent = percent;
+    futuretime = millis() + timetowait; 
+  }
   char buf[256];
   dtostrf(percent,3,0,buf);    
-   
   u8g2.clearBuffer(); 
-  String message = String(percent);
   u8g2.setFont(u8g2_font_bitcasual_tf);
-//  u8g2.drawStr(0, 10, "5:");
   u8g2.drawStr(0, 20, buf);
 //  u8g2.drawStr(0, 30, "connecting...");
 
-       if(percent == secretcode && futuretime+10000 < millis()){
+  if(percent == secretcode && futuretime+10000 < millis()){
 //        u8g2.drawStr(0, 60, "connecting...");
-        addedRandom = random(0,10);
-        }
-        
-    else if(percent == secretcode && futuretime < millis()){
+    addedRandom = random(0,10);
+    Serial.println("addrandom 1");
+  } else if(percent == secretcode && futuretime < millis()) {
 //      u8g2.drawStr(0, 10, "   uploaded."); 
 //      u8g2.drawStr(0, 30, "             ");  
-      Serial.println("unlocked");
-      byte payload[1];
-      payload[0] = (percent);
-      ttn.sendBytes(payload, sizeof(payload));
+    Serial.println("unlocked");
+    byte payload[1];
+    payload[0] = (percent);
+    ttn.sendBytes(payload, sizeof(payload));
 //      delay(1000);
-      addedRandom = random(0,3);    
+    addedRandom = random(0,3); 
+    Serial.println("addrandom 2");   
   }   
-
-    u8g2.sendBuffer();
-    counter++;          
+  u8g2.sendBuffer();
+  counter++;          
 }
 
 

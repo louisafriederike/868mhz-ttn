@@ -1,6 +1,5 @@
 #include <TheThingsNetwork.h>
 #include <SafeString.h>
-#include <millisDelay.h>
 #include <U8g2lib.h>
 
 #ifdef U8X8_HAVE_HW_SPI
@@ -10,16 +9,14 @@
 #include <Wire.h>
 #endif
 
-#define debugPrintLn true
 
 U8G2_SH1106_128X32_VISIONOX_F_HW_I2C u8g2(U8G2_R0, /* reset=*/ U8X8_PIN_NONE); 
 
-millisDelay codetimer;
 int counter = 0;
 int percent = 0;
 int prevPercent = 0;
-long futuretime = 0;
-long timetowait = 1000 * 1; //thelast number is the seconds 
+int futuretime = 0;
+int timetowait = 1000 * 1; //thelast number is the seconds 
 int secretcode = 11;
 int addedRandom = 0;
 //bool unlocked = false;
@@ -59,7 +56,7 @@ void loop(void)
     prevPercent = percent;
     futuretime = millis() + timetowait; 
   }
-  char buf[256];
+  char buf[100];
   dtostrf(percent,3,0,buf);    
   u8g2.clearBuffer(); 
   u8g2.setFont(u8g2_font_bitcasual_tf);
@@ -79,7 +76,6 @@ void loop(void)
     ttn.sendBytes(payload, sizeof(payload));
 //      delay(1000);
     addedRandom = random(0,3); 
-    Serial.println("addrandom 2");   
   }   
   u8g2.sendBuffer();
   counter++;          

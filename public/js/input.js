@@ -10,8 +10,8 @@ socket.on('connection', function(data){
 
 socket.on('node5', function(sensorData){
     var reading = sensorData.message.decoded_payload.bytes[0];
-    var nodeID = sensorData.dev_addr;
-    console.log("Dev Address",sensorData.dev_addr);
+    var nodeID = sensorData.device_id;
+    console.log("Dev Address",sensorData.device_id);
     console.log("Sensor Reading",reading); 
 
     // if(nodeID == ) {}
@@ -19,7 +19,7 @@ socket.on('node5', function(sensorData){
     // //  if(reading==11 && nodeID=="260BD7A6"){
     // //    alert('node5 unlocked.');
     // //  }
-     if(reading==11 && nodeID == "260B7965"){
+     if(reading==11 && nodeID == "eui-0004a30b001bdee4"){
         alert('node 5 unlocked');
       }
 });

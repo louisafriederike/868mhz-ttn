@@ -24,7 +24,7 @@ app.use(bodyParser.json());
 app.post("/lorawan", (req, res) => {
     console.log(req.body) // Call your action on the request here
 
-    io.emit('node5', { message:req.body.uplink_message,device_id:req.body.end_device_ids.device_id });
+    io.emit('ttn', { message:req.body.uplink_message,device_id:req.body.end_device_ids.device_id });
     res.status(200).end() // Responding is important
   });
   

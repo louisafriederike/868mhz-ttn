@@ -64,11 +64,13 @@ void loop(void) {
     u8g2.drawStr(0, 20, buf);
     u8g2.sendBuffer();
   }
-
+  Serial.print(futuretime);
+  Serial.print(" ");
+  Serial.println(millis());
   //  u8g2.drawStr(0, 30, "searching...");
 
   if (percent == secretcode && futuretime < millis()) {
-    //      u8g2.drawStr(0, 10, "   uploaded.");
+    //      u8g2.drawStr(0, 10, "   uploaded.");or
     //      u8g2.drawStr(0, 30, "             ");
     Serial.println("unlocked");
     byte payload[1] = {};

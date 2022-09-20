@@ -8,7 +8,7 @@ socket.on('connection', function(data){
 //     document.getElementById('sample').style.opacity = data+"%"; 
 // });
 
-socket.on('node5', function(sensorData){
+socket.on('ttn', function(sensorData){
     var reading = sensorData.message.decoded_payload.bytes[0];
     var nodeID = sensorData.device_id;
     console.log("Dev Address",sensorData.device_id);
@@ -21,21 +21,13 @@ socket.on('node5', function(sensorData){
     // //  }
      if(reading==11 && nodeID == "eui-0004a30b001b7a8a"){
         alert('node 1 unlocked');
-      }
-
-      if(reading==12 && nodeID == "eui-0004a30b001c21b1"){
+      } else if(reading==12 && nodeID == "eui-0004a30b001c21b1"){
         alert('node 2 unlocked');
-      }
-
-      if(reading==13 && nodeID == "eui-0004a30b001bad22"){
+      } else if(reading==13 && nodeID == "eui-0004a30b001bad22"){
         alert('node 3 unlocked');
-      }
-
-      if(reading==14 && nodeID == "eui-0004a30b001c2457"){
+      } else if(reading==14 && nodeID == "eui-0004a30b001c2457"){
         alert('node 4 unlocked');
-      }
-
-      if(reading==15 && nodeID == "eui-0004a30b001bdee4"){
+      } else if(reading==15 && nodeID == "eui-0004a30b001bdee4"){
         alert('node 5 unlocked');
       }
 });

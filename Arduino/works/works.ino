@@ -10,7 +10,7 @@
 #endif
 
 
-U8G2_SH1106_128X32_VISIONOX_F_HW_I2C u8g2(U8G2_R0, /* reset=*/ U8X8_PIN_NONE); 
+//U8G2_SH1106_128X32_VISIONOX_F_HW_I2C u8g2(U8G2_R0, /* reset=*/ U8X8_PIN_NONE); 
 
 int counter = 0;
 int percent = 0;
@@ -35,6 +35,7 @@ void setup(void)
 {
   loraSerial.begin(57600);
   debugSerial.begin(9600);
+ 
   // Wait a maximum of 10s for Serial Monitor
   while (!debugSerial && millis() < 10000);
   //ttn.onMessage(message);
@@ -45,6 +46,7 @@ void setup(void)
 
 void loop(void)
 { 
+  Serial.println(analogRead(2));
   percent = round(analogRead(2) / 4095.00 * 100 + addedRandom);
 
      Serial.print("counter ");

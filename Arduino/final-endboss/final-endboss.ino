@@ -11,13 +11,16 @@
 
 #endif
 
+
+#include <avr/wdt.h>
+
 U8G2_SH1106_128X32_VISIONOX_F_HW_I2C u8g2(U8G2_R0, /* reset=*/ U8X8_PIN_NONE);
 
-//int counter = 0;
+int counter = 0;
 int percent = 0;
 int prevPercent = 0;
-int futuretime = 0;
-int timetowait = 1000 * 5; //thelast number is the seconds
+long futuretime = 0;
+long timetowait = 1000 * 5;
 int secretcode = 15;
 int addedRandom = 0;
 //bool unlocked = false;
@@ -42,10 +45,11 @@ void setup(void) {
   u8g2.begin();
   futuretime = millis();
 }
-
+//void(* resetFunc) (void) = 0;
 void loop(void) {
-  percent = round(analogRead(2) / 4095.00 * 100 + addedRandom);
-  percent = min(percent, 16);
+  
+  percent = round(analogRead(2) / 1023.00 * 100 + addedRandom);
+  percent = min(percent, 100);
   percent = max(percent, 0);
   //
   //     Serial.print("counter ");
@@ -76,9 +80,16 @@ void loop(void) {
     byte payload[1] = {};
     payload[0] = (secretcode);
     ttn.sendBytes(payload, sizeof(payload));
+    counter++;
     //      delay(1000);
     addedRandom = random(-2, 3);
   }
+
+  if (counter>2){
+
+//      resetFunc();
+      wdt_enable(WDTO_15MS);
+    }
 
   //  counter++;
 }

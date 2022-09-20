@@ -15,8 +15,8 @@ U8G2_SH1106_128X32_VISIONOX_F_HW_I2C u8g2(U8G2_R0, /* reset=*/ U8X8_PIN_NONE);
 int counter = 0;
 int percent = 0;
 int prevPercent = 0;
-int futuretime = 0;
-int timetowait = 1000 * 1; //thelast number is the seconds 
+long futuretime = 0;
+long timetowait = 1000 * 1; //thelast number is the seconds 
 int secretcode = 11;
 int addedRandom = 0;
 //bool unlocked = false;
@@ -45,7 +45,7 @@ void setup(void)
 
 void loop(void)
 { 
-  percent = round(analogRead(2) / 4095.00 * 100 + addedRandom);
+  percent = round(analogRead(2) / 1023.00 * 100 + addedRandom);
 
      Serial.print("counter ");
      Serial.println(counter);

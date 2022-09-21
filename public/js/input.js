@@ -19,8 +19,9 @@ socket.on('node5', function(sensorData){
     // //  if(reading==11 && nodeID=="260BD7A6"){
     // //    alert('node5 unlocked.');
     // //  }
- if(reading==15 && nodeID == "eui-0004a30b001bdee4"){
+ if(levelFive() && distance5 < .02 && reading==15 && nodeID == "eui-0004a30b001bdee4"){
         alert('node 5 unlocked');
+        riddle5();
       }
 });
 
@@ -35,8 +36,9 @@ socket.on('node4', function(sensorData){
     // //  if(reading==11 && nodeID=="260BD7A6"){
     // //    alert('node5 unlocked.');
     // //  }
-    if(reading==14 && nodeID == "eui-0004a30b001c2457"){
+    if(levelFour() && distance4 < .02 && reading==14 && nodeID == "eui-0004a30b001c2457"){
         alert('node 4 unlocked');
+        riddle4();
       }
 });
 
@@ -51,8 +53,9 @@ socket.on('node3', function(sensorData){
     // //  if(reading==11 && nodeID=="260BD7A6"){
     // //    alert('node5 unlocked.');
     // //  }
-    if(reading==13 && nodeID == "eui-0004a30b001bad22"){
+    if(levelThree() && distance3 < .02 && reading==13 && nodeID == "eui-0004a30b001bad22"){
         alert('node 3 unlocked');
+        riddle3();
         }
 });
 
@@ -67,8 +70,9 @@ socket.on('node2', function(sensorData){
     // //  if(reading==11 && nodeID=="260BD7A6"){
     // //    alert('node5 unlocked.');
     // //  }
-    if(reading==12 && nodeID == "eui-0004a30b001c21b1"){
+    if(levelTwo() && distance2 < .02 && reading==12 && nodeID == "eui-0004a30b001c21b1"){
         alert('node 2 unlocked');
+        riddle2();
         }
 });
 
@@ -83,8 +87,9 @@ socket.on('node1', function(sensorData){
     // //  if(reading==11 && nodeID=="260BD7A6"){
     // //    alert('node5 unlocked.');
     // //  }
-    if(reading==11 && nodeID == "eui-0004a30b001b7a8a"){
+    if(levelOne() && distance < .02 && reading==11 && nodeID == "eui-0004a30b001b7a8a"){
         alert('node 1 unlocked');
+        riddle1();
     }
 });
 
@@ -158,7 +163,7 @@ form.addEventListener('submit', function(e) {
         objective.style.display = "none";
         dreamlog.style.display = "flex";
         back2.style.display = "flex";
-        $("#dreamlog").text("This place works differently. Add all the port numbers you received together in the right order and translate them into letters to receive a message. Enter the message to unlock the final log.");
+        $("#dreamlog").text("");
         playTrack1();
         localStorage.setItem('gateway','5');
         console.log(localStorage.getItem('gateway'));
@@ -290,7 +295,7 @@ function playTrack2(){
 
 function breadCrumb1(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text("I am standing outside the gallery space, hearing an unusual sound.");
+    $("#objective").text("");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";
@@ -304,7 +309,7 @@ function breadCrumb1(){
 
 function breadCrumb2(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text("I follow it down to the right, into a sidestreet that leads me past a parking garage covered in ivy.");
+    $("#objective").text("");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";
@@ -315,7 +320,7 @@ function breadCrumb2(){
 
 function breadCrumb3(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text("From here I can see an open gate, but I do not enter. Just to the right of it, there is a path leading me to a high voltage metal door.");
+    $("#objective").text("");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";
@@ -325,7 +330,7 @@ function breadCrumb3(){
 
 function breadCrumb4(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text("I turn around, back to the gate. I still don't enter, but walk towards lights and noise, turning left and then right on the busy street.");
+    $("#objective").text("");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";
@@ -335,7 +340,7 @@ function breadCrumb4(){
 
 function breadCrumb5(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text("I keep on walking until I reach a massive pile of sand. I move swiftly along the construction fence, past the entrance of a church.");
+    $("#objective").text("");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";
@@ -345,7 +350,7 @@ function breadCrumb5(){
 
 function breadCrumb6(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text("I can see you now. I cross the street, walking towards benches covered in overgrown bushes. This is where we meet.");
+    $("#objective").text("");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";
@@ -355,7 +360,7 @@ function breadCrumb6(){
 
 function breadCrumb7(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text("I head towards the big water, but just before I reach the busy road, I take a turn left into a narrow side street. From here I can see a big white building, with many round windows and lights.");
+    $("#objective").text("");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";
@@ -365,7 +370,7 @@ function breadCrumb7(){
 
 function breadCrumb8(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text("I walk past it and head left, past you until I almost cannot walk any further. I run up the stairs, up and down, trying to shake you off. As I head down the second staircase, I see a small metal staircase on the backside of a building.");
+    $("#objective").text("");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";
@@ -375,7 +380,7 @@ function breadCrumb8(){
 
 function breadCrumb9(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text("I can see large metal structures by the water.");
+    $("#objective").text("");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";
@@ -385,7 +390,7 @@ function breadCrumb9(){
 
 function breadCrumb10(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text("A metallic bridge leads me over water, to the final gateway.");
+    $("#objective").text("");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";
@@ -395,7 +400,7 @@ function breadCrumb10(){
 
 function breadCrumb11(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text("I can see large metal structures by the water.");
+    $("#objective").text("");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";
@@ -403,7 +408,7 @@ function breadCrumb11(){
 
 function objective1(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text("Welcome to the Gallery. Take your time, look around. When you are ready, notice the little transparent module mounted on the wall in the corner. Turn the knob to 55 and keep it steady there for a moment until a number code is revealed. Enter it in the port above, with attention to the dots, to unlock the first dream log.");
+    $("#objective").text("");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";
@@ -411,7 +416,7 @@ function objective1(){
 
 function objective2(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text("You have entered the second gateway. The code is hidden on a metal door locking in high voltage. You will see three digits, loose the first to get the code.");
+    $("#objective").text("");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";
@@ -419,7 +424,7 @@ function objective2(){
 
 function objective3(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text(" Welcome to Gateway 3. The module is located on yellow. Hidden on a number wheel in a window close by, you will find the code spelled out in large letters. Loose the first digit.");
+    $("#objective").text("");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";
@@ -427,7 +432,7 @@ function objective3(){
 
 function objective4(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text("The code is hidden on a tag on a small metal staircase: OCTOZILLA, followed by four digits. Loose the first two. The module is not far.");
+    $("#objective").text("");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";
@@ -435,7 +440,7 @@ function objective4(){
 
 function objective5(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text("The code is hidden on a sign next to a yellow bench. Port of Rotterdam. Loose the first digit. The module is hidden out of sight, facing the house boat.");
+    $("#objective").text("");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";
@@ -446,4 +451,45 @@ function fillCrumbs(){
     crumbs.forEach(function(crumb){
         crumb.style.fill = "#818779";
     });
+}
+
+
+function riddle1(){
+    var music2 = new Audio('./audio/breadcrumb.mp3');
+    $("#objective").text("riddle1");
+    music2.play();
+    objective.style.display = "flex";
+    dreamlog.style.display = "none";
+}
+
+function riddle2(){
+    var music2 = new Audio('./audio/breadcrumb.mp3');
+    $("#objective").text("riddle2");
+    music2.play();
+    objective.style.display = "flex";
+    dreamlog.style.display = "none";
+}
+
+function riddle3(){
+    var music2 = new Audio('./audio/breadcrumb.mp3');
+    $("#objective").text("riddle3");
+    music2.play();
+    objective.style.display = "flex";
+    dreamlog.style.display = "none";
+}
+
+function riddle4(){
+    var music2 = new Audio('./audio/breadcrumb.mp3');
+    $("#objective").text("riddle4");
+    music2.play();
+    objective.style.display = "flex";
+    dreamlog.style.display = "none";
+}
+
+function riddle5(){
+    var music2 = new Audio('./audio/breadcrumb.mp3');
+    $("#objective").text("riddle4");
+    music2.play();
+    objective.style.display = "flex";
+    dreamlog.style.display = "none";
 }

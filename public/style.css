@@ -330,3 +330,18 @@ button:active{
       transform: translateX(-50%) translateY(-50%);
       z-index: -10;
     }
+
+#intro{
+
+  z-index:2;
+  position: flex;
+  display: block;
+  border: 2px solid #3d3f38;
+  border-radius:6px;
+  padding: 5px;
+  margin-bottom:6px;
+  color: #ff4000;
+  background-color: #0e0e0a;
+  height: 100vh;
+
+}

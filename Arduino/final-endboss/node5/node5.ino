@@ -21,7 +21,7 @@ int percent = 0;
 int prevPercent = 0;
 long futuretime = 0;
 long timetowait = 1000 * 5;
-int secretcode = 12;
+int secretcode = 15;
 int addedRandom = 0;
 //bool unlocked = false;
 
@@ -56,7 +56,7 @@ void loop(void) {
   //     Serial.println(counter);
 
   if (percent != prevPercent) {
-    Serial.println("node5");
+    Serial.println("node2");
     Serial.println(percent);
     prevPercent = percent;
     futuretime = millis() + timetowait;

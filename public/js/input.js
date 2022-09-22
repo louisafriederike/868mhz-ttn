@@ -130,7 +130,7 @@ form.addEventListener('submit', function(e) {
         playTrack1();
         localStorage.setItem('gateway','1');
         console.log(localStorage.getItem('gateway'));
-        loc1.play();
+        // loc1.play();
         
     }
     
@@ -139,7 +139,7 @@ form.addEventListener('submit', function(e) {
         playTrack1();
         localStorage.setItem('gateway','2');
         console.log(localStorage.getItem('gateway'));
-        loc2.play();
+        // loc2.play();
     }
 
     if (inputString.includes('20.5.3.')){
@@ -147,7 +147,7 @@ form.addEventListener('submit', function(e) {
         playTrack1();
         localStorage.setItem('gateway','3');
         console.log(localStorage.getItem('gateway'));
-        loc3.play();
+        // loc3.play();
     }
 
     
@@ -156,7 +156,7 @@ form.addEventListener('submit', function(e) {
         playTrack1();
         localStorage.setItem('gateway','4');
         console.log(localStorage.getItem('gateway'));
-        loc4.play();
+        // loc4.play();
     }
 
     if (inputString.includes('66')){
@@ -177,7 +177,7 @@ form.addEventListener('submit', function(e) {
         playTrack1();
         localStorage.setItem('gateway','6');
         console.log(localStorage.getItem('gateway'));
-        loc5.play();
+        // loc5.play();
     }
     else{
         $("#input").text("inactive port");
@@ -295,7 +295,7 @@ function playTrack2(){
 
 function breadCrumb1(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text("");
+    $("#objective").text("turn towards the locked staircase and follow the massive grey pipe above.");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";
@@ -309,7 +309,7 @@ function breadCrumb1(){
 
 function breadCrumb2(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text("");
+    $("#objective").text("you are passing by 3d printers and solder irons to your right. keep walking.");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";
@@ -320,7 +320,7 @@ function breadCrumb2(){
 
 function breadCrumb3(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text("");
+    $("#objective").text("to your left, you will see the blue metal structure turn grey, this is where you will find me");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";
@@ -330,7 +330,7 @@ function breadCrumb3(){
 
 function breadCrumb4(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text("");
+    $("#objective").text("head back, towards the center of the venue.");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";
@@ -340,7 +340,7 @@ function breadCrumb4(){
 
 function breadCrumb5(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text("");
+    $("#objective").text("from here, walk towards the entrance staying left.");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";
@@ -350,7 +350,7 @@ function breadCrumb5(){
 
 function breadCrumb6(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text("");
+    $("#objective").text("under the cubic lora cloud, you will find me stuck on blue metal.");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";
@@ -360,7 +360,7 @@ function breadCrumb6(){
 
 function breadCrumb7(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text("");
+    $("#objective").text("head back towards the back of the venue, staying on this side.");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";
@@ -370,7 +370,7 @@ function breadCrumb7(){
 
 function breadCrumb8(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text("");
+    $("#objective").text("walk past the black curtains to your right. behind the toilet sign, I am waiting.");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";
@@ -380,7 +380,7 @@ function breadCrumb8(){
 
 function breadCrumb9(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text("");
+    $("#objective").text("keep on heading to the back of the venue, deep into the mirror world.");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";
@@ -390,7 +390,7 @@ function breadCrumb9(){
 
 function breadCrumb10(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text("");
+    $("#objective").text("past the things industries halo above, a few steps further, I am hiding on yellow metal.");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";

@@ -401,6 +401,11 @@
          function enterGame(){
             document.getElementById("intro").style.display = 'none';
          }
+
+         if(localStorage.getItem("gateway") > "1"){
+            document.getElementById("intro").style.display = 'none';
+
+         }
          </script>   
     </body>
 </html>

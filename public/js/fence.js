@@ -23,20 +23,20 @@
     
     if (navigator.geolocation) {
       
-      node1Lat = 52.382813;
-      node1Long = 4.920838;
+      node1Lat = 52.3827241;
+      node1Long = 4.9207523;
 
-      node2Lat = 52.38263;
-      node2Long = 4.920413;
+      node2Lat = 52.3825249;
+      node2Long = 4.9207538;
 
-      node3Lat = 52.382303;
-      node3Long = 4.920996;
+      node3Lat = 52.3821816;
+      node3Long = 4.920869;
 
-      node4Lat = 52.38263;
-      node4Long = 4.920413;
+      node4Lat = 52.3827052;
+      node4Long = 4.9207769;
 
-      node5Lat = 52.382813;
-      node5Long = 4.920838;
+      node5Lat = 52.3827634;
+      node5Long = 4.920747;
 
       // node6Lat = 51.916080703822985;
       // node6Long = 4.476145158543535;
@@ -95,7 +95,7 @@
       }
       
         
-       if(distance < .01){
+       if(distance < .007){
        $("#message").text(" >>> you have entered gateway 1");
         //   $("#objective").text("Welcome to the Gallery. Take your time, look around. When you are ready, notice the little transparent module mounted on the wall in the corner. Turn the knob to 55 and keep it steady there for a moment until a number code is revealed. Enter it in the port above, with attention to the dots, to unlock the first dream log.");
        playTrack1();        
@@ -106,7 +106,7 @@
         //   $("#objective").text("Enter S/ash Gallery to step into the game.");
         }
 
-       if(distance2 < .01){
+       if(distance2 < .007){
           playTrack1();
           $("#message").text(">>> you have entered gateway 2.");
         //   $("#objective").text("You have entered the second gateway. the code is hidden on a metal door locking in high voltage. You will see three digits, loose the first to get the code.");
@@ -115,7 +115,7 @@
         // }else if(distance2 > .02 && localStorage.getItem('gateway') == 1){
         //   $("#message2").text("You are outside reach of Gateway 2.");
         }
-       if(distance3 < .01){
+       if(distance3 < .007){
           playTrack1();
           $("#message").text(">>> you have entered gateway 3.");
         //   $("#objective").text("The code is hidden on a number wheel in a window close by, spelled out in large letters. Loose the first digit.");
@@ -125,7 +125,7 @@
         //   $("#message").text("You are outside reach of Gateway 3.");
         }
 
-        if(distance4 < .01){
+        if(distance4 < .007){
           playTrack1();
           $("#message").text(">>> you have entered gateway 4.");
         //   $("#objective").text("The code is hidden on a tag on a small metal straigcase: OCTOZILLA, followed bu four digits. Loose the first two.");
@@ -135,7 +135,7 @@
         //   $("#message").text("You are outside reach of Gateway 4.");
         }
 
-        if(distance5 < .01){
+        if(distance5 < .007){
           playTrack1();
           $("#message").text(">>> you have entered gateway 5.");
         //   $("#objective").text("The code is hidden on a sign next to a yellow bench. Port of Rotterdam. Loose the first digit.");

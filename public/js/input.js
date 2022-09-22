@@ -408,7 +408,7 @@ function breadCrumb11(){
 
 function objective1(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text("");
+    $("#objective").text("I am very close to you. Nested in blue metal, green and square. Turn to me to channel 11");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";
@@ -416,7 +416,7 @@ function objective1(){
 
 function objective2(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text("");
+    $("#objective").text("Turn to channel 12");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";
@@ -424,7 +424,7 @@ function objective2(){
 
 function objective3(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text("");
+    $("#objective").text("Turn to channel 13");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";
@@ -432,7 +432,7 @@ function objective3(){
 
 function objective4(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text("");
+    $("#objective").text("Turn to channel 14");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";
@@ -440,7 +440,7 @@ function objective4(){
 
 function objective5(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text("");
+    $("#objective").text("Turn to channel 15");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";

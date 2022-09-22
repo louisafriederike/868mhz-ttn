@@ -38,8 +38,8 @@
       node5Lat = 52.382813;
       node5Long = 4.920838;
 
-      node6Lat = 51.916080703822985;
-      node6Long = 4.476145158543535;
+      // node6Lat = 51.916080703822985;
+      // node6Long = 4.476145158543535;
 
       message = document.querySelector('#on-location-track');
       node01active = document.querySelector('#objective');

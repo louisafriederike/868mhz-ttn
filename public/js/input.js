@@ -125,7 +125,7 @@ form.addEventListener('submit', function(e) {
         console.log(inputString);
     }
 
-    if (inputString.includes('9.1.13.')){
+    if (inputString.includes('LORAWAN')){
         levelTwo();
         playTrack1();
         localStorage.setItem('gateway','1');
@@ -134,7 +134,7 @@ form.addEventListener('submit', function(e) {
         
     }
     
-     if (inputString.includes('16.18.15.')){
+     if (inputString.includes('SLEEPWALKING')){
         levelThree();
         playTrack1();
         localStorage.setItem('gateway','2');
@@ -142,7 +142,7 @@ form.addEventListener('submit', function(e) {
         // loc2.play();
     }
 
-    if (inputString.includes('20.5.3.')){
+    if (inputString.includes('TRACKING')){
         levelFour();
         playTrack1();
         localStorage.setItem('gateway','3');
@@ -151,7 +151,7 @@ form.addEventListener('submit', function(e) {
     }
 
     
-    if (inputString.includes('20.15.18')){
+    if (inputString.includes('CLOUD')){
         levelFive();
         playTrack1();
         localStorage.setItem('gateway','4');
@@ -159,20 +159,8 @@ form.addEventListener('submit', function(e) {
         // loc4.play();
     }
 
-    if (inputString.includes('66')){
-        objective.style.display = "none";
-        dreamlog.style.display = "flex";
-        back2.style.display = "flex";
-        $("#dreamlog").text("");
-        playTrack1();
-        localStorage.setItem('gateway','5');
-        console.log(localStorage.getItem('gateway'));
-        console.log("stage 5");
-        inputString = '';
-        
-    }
 
-    if (inputString.includes('I AM PROTECTOR')){
+    if (inputString.includes('MIRROR')){
         levelSix();
         playTrack1();
         localStorage.setItem('gateway','6');
@@ -456,7 +444,7 @@ function fillCrumbs(){
 
 function riddle1(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text("riddle1");
+    $("#objective").text("You have made contact. You might be wondering who I am. Only from within the mirror world, I become material. My hands and feet are scattered sensors. The port code for the gateway you have entered is the name of the technology that breathes me.");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";
@@ -464,7 +452,7 @@ function riddle1(){
 
 function riddle2(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text("riddle2");
+    $("#objective").text("You are following the steps of a good friend of mine. She met me in her nightly visions. In her sleep, she left her bed and wandered. What has she been doing?");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";
@@ -472,7 +460,7 @@ function riddle2(){
 
 function riddle3(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text("riddle3");
+    $("#objective").text("I am starting to understand how you operate. How you move. We are interlinking. What is this process called, me, the network, following your path?");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";
@@ -480,7 +468,7 @@ function riddle3(){
 
 function riddle4(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text("riddle4");
+    $("#objective").text("My presence can be overwhelming, as I sense yours constantly. No matter how far you run, I won't let go. But don't be afraid. What covers the sun and stores information?");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";
@@ -488,7 +476,7 @@ function riddle4(){
 
 function riddle5(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text("riddle4");
+    $("#objective").text("Look how far we've come. I've led you to follow her steps to the final node. What reflects what it sees and opens a gate to another world?");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";

@@ -48,7 +48,6 @@ function levelOne(){
     document.querySelector('#rect17').style.fill = "black";
     document.querySelector('#rect15').style.fill = "black";
 
-
 }
 
 function levelTwo(){

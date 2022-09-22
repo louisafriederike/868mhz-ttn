@@ -95,7 +95,7 @@
       }
       
         
-       if(distance < .02){
+       if(distance < .01){
        $("#message").text(" >>> you have entered gateway 1");
         //   $("#objective").text("Welcome to the Gallery. Take your time, look around. When you are ready, notice the little transparent module mounted on the wall in the corner. Turn the knob to 55 and keep it steady there for a moment until a number code is revealed. Enter it in the port above, with attention to the dots, to unlock the first dream log.");
        playTrack1();        
@@ -106,7 +106,7 @@
         //   $("#objective").text("Enter S/ash Gallery to step into the game.");
         }
 
-       if(distance2 < .02){
+       if(distance2 < .01){
           playTrack1();
           $("#message").text(">>> you have entered gateway 2.");
         //   $("#objective").text("You have entered the second gateway. the code is hidden on a metal door locking in high voltage. You will see three digits, loose the first to get the code.");
@@ -115,7 +115,7 @@
         // }else if(distance2 > .02 && localStorage.getItem('gateway') == 1){
         //   $("#message2").text("You are outside reach of Gateway 2.");
         }
-       if(distance3 < .02){
+       if(distance3 < .01){
           playTrack1();
           $("#message").text(">>> you have entered gateway 3.");
         //   $("#objective").text("The code is hidden on a number wheel in a window close by, spelled out in large letters. Loose the first digit.");
@@ -125,7 +125,7 @@
         //   $("#message").text("You are outside reach of Gateway 3.");
         }
 
-        if(distance4 < .02){
+        if(distance4 < .01){
           playTrack1();
           $("#message").text(">>> you have entered gateway 4.");
         //   $("#objective").text("The code is hidden on a tag on a small metal straigcase: OCTOZILLA, followed bu four digits. Loose the first two.");
@@ -135,7 +135,7 @@
         //   $("#message").text("You are outside reach of Gateway 4.");
         }
 
-        if(distance5 < .02){
+        if(distance5 < .01){
           playTrack1();
           $("#message").text(">>> you have entered gateway 5.");
         //   $("#objective").text("The code is hidden on a sign next to a yellow bench. Port of Rotterdam. Loose the first digit.");

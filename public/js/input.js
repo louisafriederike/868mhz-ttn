@@ -308,7 +308,7 @@ function breadCrumb2(){
 
 function breadCrumb3(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text("to your left, you will see the blue metal structure turn grey, this is where you will find me");
+    $("#objective").text("to your left, next to the blue metal, sense tomorrow and find me");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";

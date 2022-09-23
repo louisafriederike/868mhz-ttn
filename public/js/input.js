@@ -87,7 +87,7 @@ socket.on('node1', function(sensorData){
     // //  if(reading==11 && nodeID=="260BD7A6"){
     // //    alert('node5 unlocked.');
     // //  }
-    if(localStorage.getItem("gateway")!==null && reading==11 && nodeID == "eui-0004a30b001b7a8a"){
+    if(localStorage.getItem("gateway")==null && reading==11 && nodeID == "eui-0004a30b001b7a8a"){
         // alert('node 1 unlocked');
         riddle1();
     }

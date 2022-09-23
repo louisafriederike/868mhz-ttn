@@ -19,8 +19,8 @@ socket.on('node5', function(sensorData){
     // //  if(reading==11 && nodeID=="260BD7A6"){
     // //    alert('node5 unlocked.');
     // //  }
- if(localStorage.getItem("gateway") == "4"  && distance5 < .007 && reading==15 && nodeID == "eui-0004a30b001bdee4"){
-        alert('node 5 unlocked');
+ if(localStorage.getItem("gateway") == "4" && reading==15 && nodeID == "eui-0004a30b001bdee4"){
+        // alert('node 5 unlocked');
         riddle5();
       }
 });
@@ -36,8 +36,8 @@ socket.on('node4', function(sensorData){
     // //  if(reading==11 && nodeID=="260BD7A6"){
     // //    alert('node5 unlocked.');
     // //  }
-    if(localStorage.getItem("gateway") == "3"  && distance4 < .007 && reading==14 && nodeID == "eui-0004a30b001c2457"){
-        alert('node 4 unlocked');
+    if(localStorage.getItem("gateway") == "3" && reading==14 && nodeID == "eui-0004a30b001c2457"){
+        // alert('node 4 unlocked');
         riddle4();
       }
 });
@@ -53,8 +53,8 @@ socket.on('node3', function(sensorData){
     // //  if(reading==11 && nodeID=="260BD7A6"){
     // //    alert('node5 unlocked.');
     // //  }
-    if(localStorage.getItem("gateway") == "2"  && distance3 < .007 && reading==13 && nodeID == "eui-0004a30b001bad22"){
-        alert('node 3 unlocked');
+    if(localStorage.getItem("gateway") == "2" && reading==13 && nodeID == "eui-0004a30b001bad22"){
+        // alert('node 3 unlocked');
         riddle3();
         }
 });
@@ -70,8 +70,8 @@ socket.on('node2', function(sensorData){
     // //  if(reading==11 && nodeID=="260BD7A6"){
     // //    alert('node5 unlocked.');
     // //  }
-    if(localStorage.getItem("gateway") == "1"  && distance2 < .007 && reading==12 && nodeID == "eui-0004a30b001c21b1"){
-        alert('node 2 unlocked');
+    if(localStorage.getItem("gateway") == "1" && reading==12 && nodeID == "eui-0004a30b001c21b1"){
+        // alert('node 2 unlocked');
         riddle2();
         }
 });
@@ -87,8 +87,8 @@ socket.on('node1', function(sensorData){
     // //  if(reading==11 && nodeID=="260BD7A6"){
     // //    alert('node5 unlocked.');
     // //  }
-    if(localStorage.getItem("gateway")!==null && distance < .007 && reading==11 && nodeID == "eui-0004a30b001b7a8a"){
-        alert('node 1 unlocked');
+    if(localStorage.getItem("gateway")!==null && reading==11 && nodeID == "eui-0004a30b001b7a8a"){
+        // alert('node 1 unlocked');
         riddle1();
     }
 });

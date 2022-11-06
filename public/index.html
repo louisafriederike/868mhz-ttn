@@ -293,10 +293,36 @@
                                     <p>
                                     STATUS:
                                     <span id="message">detecting....</span>
-                                    </p>                               
+                                    </p> 
+                                    <audio controls autoplay id="audiofile-intro">
+                                       <source src="audio/intro.WAV"  type="audio/wav">
+                                     Your browser does not support the audio element.
+                                     </audio>    
+                                     <audio controls autoplay id="audiofile-1">
+                                       <source src="audio/loc1.WAV"  type="audio/wav">
+                                     Your browser does not support the audio element.
+                                     </audio>         
+                                     <audio controls autoplay id="audiofile-2">
+                                       <source src="audio/loc2.WAV"  type="audio/wav">
+                                     Your browser does not support the audio element.
+                                     </audio>  
+                                     <audio controls autoplay id="audiofile-3">
+                                       <source src="audio/loc3.wav" type="audio/wav">
+                                     Your browser does not support the audio element.
+                                     </audio>  
+                                     <audio controls autoplay id="audiofile-4">
+                                       <source src="audio/loc4.wav"  type="audio/wav">
+                                     Your browser does not support the audio element.
+                                     </audio>  
+                                     <audio controls autoplay id="audiofile-5">
+                                       <source src="audio/loc5.wav" type="audio/wav">
+                                     Your browser does not support the audio element.
+                                     </audio>  
+                          
                                 </div>
                         </div>
                         <div class="section" id="dreamlog">
+
                             <p></p>  
                             </div>
                             <div class="section" id="back2" onclick="backAgain2()">
@@ -305,23 +331,23 @@
                         <div class="section" id="objective">
                         <p>OBJECTIVE:<br>Did you ever sleepwalk? Moving through two realities simultaneously can be disorienting, even dangerous.
                            And what remains in the morning, once you wake? Will it all be forgotten, or will there be queues around you on how far you have wandered? My story is stored in this space we both share. Invisible fragments within vertical stacks of memory layered on the grounds you are walking on. 
-                       Move through this space using my mental map to locate five gateways. Each location holds a dream log. In a parallel state, I have encountered a creature. Omnipresent and all encompassing. One could call it, the very soul of things, the heartbeat flushing life into the lifeless. In order for us to meet face to face, I had to enter a mirror world. Follow my steps to uncover my nightly visions. <br>Starting at the 868mhz booth, tap gateway 1 on the map to locate the first gateway. All locations are reachable by foot. The experience comes in the form of a fictional narrative that will take you around 30 minutes to uncover inside this building.</p>  
+                       Move through this space using my mental map to locate five gateways. Each location holds a dream log. In a parallel state, I have encountered a creature. Omnipresent and all encompassing. One could call it, the very soul of things, the heartbeat flushing life into the lifeless. In order for us to meet face to face, I had to enter a mirror world. Follow my steps to uncover my nightly visions. <br></p>  
                         </div>
                         
                         <div class="section" id="log1">          
-                        <p onclick="log1Open()">LOG 1  03:02:00  02-09-22  PORT: 9.1.13.<br></p>
+                        <p onclick="log1Open()">LOG 1  03:02:00  01-10-22 CHANNEL 24<br></p>
                         </div> 
                         <div class="section" id="log2">   
-                        <p onclick="log2Open()">LOG 2  02:42:00  13-09-22  PORT: 16.18.15.<br></p>
+                        <p onclick="log2Open()">LOG 2  02:42:00  02-10-22 CHANNEL 82<br></p>
                         </div>
                         <div class="section" id="log3">             
-                        <p onclick="log3Open()">LOG 3  03:36:00  25-09-22  PORT: 20.5.3.<br></p>
+                        <p onclick="log3Open()">LOG 3  03:36:00  03-10-22 CHANNEL 62<br></p>
                         </div>
                         <div class="section" id="log4">   
-                        <p onclick="log4Open()">LOG 4  03:86:00  07-09-22  PORT: 20.15.18<br></p>
+                        <p onclick="log4Open()">LOG 4  03:86:00  05-10-22 CHANNEL 22<br></p>
                         </div>
                         <div class="section" id="log5">                 
-                        <p onclick="log5Open()">LOG 5  06:86:00  17-09-22  PORT: 868<br></p>   
+                        <p onclick="log5Open()">LOG 5  06:86:00  06-10-22 CHANNEL 15<br></p>   
                         </div>              
                        
                         <div class="section" id="log">
@@ -401,11 +427,11 @@
          };
 
          function enterGame(){
-            document.getElementById("intro").style.display = 'none';
+            // document.getElementById("intro").style.display = 'none';
          }
 
          if(localStorage.getItem("gateway") > "0"){
-            document.getElementById("intro").style.display = 'none';
+            // document.getElementById("intro").style.display = 'none';
 
          }
          </script>   

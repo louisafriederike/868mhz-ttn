@@ -345,3 +345,22 @@ button:active{
   height: 100vh;
 
 }
+
+#audiofile-intro{
+  display: block;
+}
+#audiofile-1{
+  display: none;
+}
+#audiofile-2{
+  display: none;
+}
+#audiofile-3{
+  display: none;
+}
+#audiofile-4{
+  display: none;
+}
+#audiofile-5{
+  display: none;
+}

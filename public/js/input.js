@@ -117,12 +117,12 @@ form.addEventListener('submit', function(e) {
     dreamlog = document.querySelector('#dreamlog');
     back2 = document.querySelector('#back2');
     objective = document.querySelector('#objective');
-    audiointro = document.getElementById('#audiofile-intro');
-    audio1 = document.getElementById('#audiofile-1');
-    audio2 = document.getElementById('#audiofile-2');
-    audio3 = document.getElementById('#audiofile-3');
-    audio4 = document.getElementById('#audiofile-4');
-    audio5 = document.getElementById('#audiofile-5');
+    // audiointro = document.getElementById('#audiofile-intro');
+    // audio1 = document.getElementById('#audiofile-1');
+    // audio2 = document.getElementById('#audiofile-2');
+    // audio3 = document.getElementById('#audiofile-3');
+    // audio4 = document.getElementById('#audiofile-4');
+    // audio5 = document.getElementById('#audiofile-5');
 
     e.preventDefault();
     if (input.value) {
@@ -133,9 +133,9 @@ form.addEventListener('submit', function(e) {
 
     if (inputString.includes('KEY')){
         levelTwo();
-        // playTrack1();
-        audiointro.style.display = "none";
-        audio1.style.display = "block";
+        playTrack1();
+        // audiointro.style.display = "none";
+        // audio1.style.display = "block";
         localStorage.setItem('gateway','1');
         console.log(localStorage.getItem('gateway'));
         // loc1.play();

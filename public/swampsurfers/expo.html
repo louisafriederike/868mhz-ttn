@@ -1,0 +1,191 @@
+<!doctype html>
+<html>
+    <head>
+        <title>control room</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="style.css" rel="stylesheet">
+        <script src="input.js"></script>
+        <script src="p5.geolocation.js"></script>
+        <!-- <script src="p5.js"></script> -->
+        <script src='socket.io/socket.io.js'></script>
+        <script src="audio.js"></script>
+        <meta property="og:title" content="868 MHz" />
+        <meta property="og:description" content="868 MHz is a hybrid reality game running on the same standardized frequency as the LoRa gateways of The Things Network. Chase the electric currents of the asphalt to locate gateways and encounter a being which has nested itself beneath the city streets, all the way down the power lines woven amidst its whirring epicenter." />
+        <meta property="og:image" content="/img/868.png" />
+    </head>
+    <body>
+        <script>
+            let lat, lon;
+                if ('geolocation' in navigator) {
+                console.log('geolocation available');
+                navigator.geolocation.getCurrentPosition(async position => {
+                    let lat, lon, weather, air;
+                    try {
+                        lat = position.coords.latitude;
+                        lon = position.coords.longitude;
+                        document.getElementById('latitude').textContent = lat.toFixed(2);
+                        document.getElementById('longitude').textContent = lon.toFixed(2);
+                        const api_url = `weather/${lat},${lon}`;
+                        const response = await fetch(api_url);
+                        const json = await response.json();
+                        weather = json.weather.currently;
+                        air = json.air_quality.results[0].measurements[0];
+                        document.getElementById('summary').textContent = weather.summary;
+                        document.getElementById('temp').textContent = weather.temperature;
+                        document.getElementById('aq_parameter').textContent = air.parameter;
+                        document.getElementById('aq_value').textContent = air.value;
+                        document.getElementById('aq_units').textContent = air.unit;
+                        document.getElementById('aq_date').textContent = air.lastUpdated;
+                    } catch (error) {
+                        console.error(error);
+                            air = { value: -1 };
+                            document.getElementById('aq_value').textContent = 'NO READING';
+                    }
+
+                        const data = { lat, lon, weather, air };
+                        const options = {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(data)
+                        };
+                        const db_response = await fetch('/api', options);
+                        const db_json = await db_response.json();
+                        console.log(db_json);
+                    });
+                    } else {
+                    console.log('geolocation not available');
+                    }            
+        </script>
+
+        <div class="flex-container2">
+            <div class="flex-top">
+                <div class="section2">
+                    <progress id="file" max="100" value="70"> 70% </progress>
+                    <p>DISTANCE: <span id="distance">0</span> km</p>
+                
+                    <div id="tripmeter">
+
+                        <p>
+                        STATUS:
+                        <span id="message-node1">detecting....</span>
+                        </p>           
+                
+                        <script>
+                            var socket = io();
+                            socket.on('data', function(data){
+            
+                                console.log(data);
+                                // document.getElementById('sample').style.opacity = data+"%"; 
+            
+                            });
+            
+                            socket.on('node1', function(sensor){
+                    
+                            console.log(sensor);
+                            document.getElementById("file").value = sensor; 
+                            
+
+                            });	
+
+                            // socket.on('node3', function(sensor){
+                    
+                            // console.log('3' + sensor);
+                            // document.getElementById("file2").value = sensor; 
+                            
+
+                            // });
+                        </script>
+                    </div>
+                </div>
+                
+                <div class="section2">
+                    <progress id="file2" max="100" value="70"> 70% </progress>
+                    <p>DISTANCE: <span id="distance">0</span> km</p>
+                    <p> STATUS:
+                        <span id="message-node2">detecting....</span>
+                    </p>   
+                    <script>
+                        var socket = io();
+                        socket.on('data', function(data){
+        
+                            console.log(data);
+                            // document.getElementById('sample').style.opacity = data+"%"; 
+        
+                        });
+
+                        socket.on('node3', function(sensor){
+                
+                        console.log('3' + sensor);
+                        document.getElementById("file2").value = sensor; 
+
+                        });
+                        
+                        socket.on('create', 'expo');
+                        socket.on('userposition', function(msg){
+
+
+                            console.log(msg);
+
+                        });
+
+                    </script>   
+                    </div>
+                    <div class="section2">
+                    <progress id="file" max="100" value="70"> 70% </progress>
+                    <p>DISTANCE: <span id="distance">0</span> km</p>     
+                    <p> STATUS:
+                        <span id="message-node3">detecting....</span>
+                    </p>  
+                
+                </div>
+            </div>
+            <div class="flex-bottom">
+                <div class="section2">
+                    <progress id="file" max="100" value="10"> 70% </progress>
+                    <p>DISTANCE: <span id="distance">0</span> km</p><br>
+                    <p> STATUS:
+                        <span id="message-node4">detecting....</span>
+                    </p>
+                 </div>
+                 <div class="section2">
+                    <progress id="file5" max="100" value="30"> 70% </progress>
+                    <p>DISTANCE: <span id="distance">0</span> km</p>
+                    <p> STATUS:
+                        <span id="message-node5">detecting....</span>
+                    </p>
+                    <script>
+                        var socket = io();
+                        socket.on('data', function(data){
+        
+                            console.log(data);
+                            // document.getElementById('sample').style.opacity = data+"%"; 
+        
+                        });
+
+                        socket.on('node5', function(sensor){
+                
+                        console.log('5' + sensor);
+                        document.getElementById("file5").value = sensor; 
+                        
+
+                        });
+                    </script>  
+                 </div>
+                 <div class="section2">
+                    <progress id="file" max="100" value="20"> 70% </progress>
+                    <p>DISTANCE: <span id="distance">0</span> km</p>
+                    <p> STATUS:
+                        <span id="message-node6">detecting....</span>
+                    </p>
+                 </div>
+            </div>
+        </div>  
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="fence.js"></script>
+    </body>
+</html>

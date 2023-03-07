@@ -1,0 +1,156 @@
+<!doctype html>
+<html>
+    <head>
+        <title>SWAMP SURFERS ~ DOXXMAP</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="style.css" rel="stylesheet">
+        <meta property="og:title" content="SWAMP CRAWLERS ~ DOXXMAP" />
+        <meta property="og:description" content="Find the five riddles and enter their answers to uncover the map to the doxxboxx." />
+      
+    </head>
+    <body>
+        <div>
+            <img id="swamp"  src="img/logo_swamp-r.png" >
+     </div>
+        <div class="wrapper">
+        <div class="flex-container">
+                    <div class="flex-left">
+
+                        <div class="section">
+                            <!-- <progress id="file" max="100" value="70"> 70% </progress> -->                      
+                        <p style="color: #f00">༼(̿▀̿ ̿Ĺ̯̿̿▀̿ ̿)̄ >>> CODEWORD:</p>
+                        <span><form id="form" action="">
+                            <input id="input" autocomplete="off" onkeyup="this.value = this.value.toUpperCase();"/><button>>>></button>
+                        </form></span> 
+                      </div>
+                      
+                      <div class="section" id="log1">          
+                        <p onclick="log1Open()"> ヽ༼ ຈل͜ຈ༼ ▀̿̿Ĺ̯̿̿▀̿ ̿༽Ɵ͆ل͜Ɵ͆ ༽ﾉ MUD<br></p>
+                        </div> 
+                        <div class="section" id="log2">   
+                        <p onclick="log2Open()">ヽ༼ ຈل͜ຈ༼ ▀̿̿Ĺ̯̿̿▀̿ ̿༽Ɵ͆ل͜Ɵ͆ ༽ﾉ WEB<br></p>
+                        </div>
+                        <div class="section" id="log3">             
+                        <p onclick="log3Open()">ヽ༼ ຈل͜ຈ༼ ▀̿̿Ĺ̯̿̿▀̿ ̿༽Ɵ͆ل͜Ɵ͆ ༽ﾉ BUG<br></p>
+                        </div>
+                        <div class="section" id="log4">   
+                        <p onclick="log4Open()">ヽ༼ ຈل͜ຈ༼ ▀̿̿Ĺ̯̿̿▀̿ ̿༽Ɵ͆ل͜Ɵ͆ ༽ﾉ CLOUD<br></p>
+                        </div>
+                        <div class="section" id="log5">                 
+                        <p onclick="log5Open()">ヽ༼ ຈل͜ຈ༼ ▀̿̿Ĺ̯̿̿▀̿ ̿༽Ɵ͆ل͜Ɵ͆ ༽ﾉ LEAK<br></p>   
+                        </div>   
+                    
+                      <div class="section" id="pentagram">
+                        <img id="zip"  src="img/map-test-01.png" >
+
+
+<div class="section" id="icons">
+    <div class="row">
+     <div class="column">  <img id="zip" class="icon" src="img/1.png" >  </div>
+    <div class="column"> <img id="extrapractice" class="icon" src="img/1.png">  </div>
+    <div class="column"><img id="verfris"  class="icon" src="img/1.png">  </div>
+    <div class="column"><img id="drift"  class="icon" src="img/1.png"> </div>
+     <div class="column"><img class="icon"  id="destu" src="img/1.png"></div>
+
+</div>
+</div>
+
+
+
+                        <img id="pentagram-unlocked" src="img/pentagram-unlocked.png">
+    
+                             </div>   
+
+                        <div class="section" id="dreamlog">
+                            <p></p>  
+                        </div>
+
+                            <div class="section" id="back2" onclick="backAgain2()">
+                                ↪ log 
+                        </div>
+                        <div class="section" id="objective">
+                        <p>OBJECTIVE:<br>Link up with bio-surfers to complete the five riddles and enter the answers to the riddles above to uncover the hidden location of the doxxboxx. The only way to stop the trolling.</p>  
+                        </div>
+                        
+           
+                       
+                        <div class="section" id="log">
+                        <p id="info"></p>
+
+                           </div>   
+                           <div class="section" id="back" onclick="backAgain()">
+                              ↪
+                           </div>
+
+                    </div>
+
+            
+            <div class="flex-right">
+
+            </div>
+
+
+        </div>  
+        
+      </div>
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="js/fence.js"></script>
+        <script type="text/javascript" src="js/level.js"></script>
+        <script type="text/javascript" src="js/input.js"></script>
+        <script>
+         window.onload = checkLevel();
+
+         function checkLevel(){
+
+         console.log(localStorage.getItem('gateway'));
+       
+  
+        //  if (localStorage.getItem("gateway")!==null){
+             
+           if(localStorage.getItem("gateway1") == "1") {
+            // levelTwo(); 
+            log1.style.display = "flex";
+            console.log('gateway1 unlocked');
+           } 
+          
+           if(localStorage.getItem("gateway2") == "1") {
+            //  levelThree();
+            log2.style.display = "flex";
+            console.log('gateway2 unlocked');
+           } 
+
+           if(localStorage.getItem("gateway3") == "1") {
+            //  levelFour();
+            log3.style.display = "flex";
+            console.log('gateway3 unlocked');
+           } 
+
+           if(localStorage.getItem("gateway4") == "1") {
+            //  levelFive();
+            log4.style.display = "flex";
+            console.log('gateway4 unlocked');
+           } 
+
+           if(localStorage.getItem("gateway5") == "1") {
+            //  levelSix();
+            log5.style.display = "flex";
+            console.log('gateway5 unlocked');
+           } 
+
+           
+           if(localStorage.getItem("gateway1") == "1" && localStorage.getItem("gateway2") == "1" && localStorage.getItem("gateway3") == "1" && localStorage.getItem("gateway4") == "1" && localStorage.getItem("gateway5") == "1") {
+            //  levelFive();
+          
+            document.getElementById("uuid-faffbd01-47ef-4272-89ac-d31673ff6396").style.display = "none";
+            document.getElementById("uuid-28306325-d7ee-4a42-90d2-ebed74a80342").style.display = "block";
+         } 
+          
+         };
+         
+         </script>   
+    </body>
+</html>

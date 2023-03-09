@@ -360,11 +360,11 @@ button:active{
     display: none;
   }
 
-  .icon{
+  /* .icon{
     max-width: 6vw;
     min-width:2vw;
     display: inline-block;
-  }
+  } */
 
   .row {
     display: flex;
@@ -389,3 +389,16 @@ button:active{
   padding: 10px;
   position: absolute;
 z-index: -1;}
+
+#mud{display: block;}
+#bug{display: block;}
+#cloud{display: block;}
+#web{display: block;}
+#leak{display: block;}
+
+#mud-g{display: none;}
+#bug-g{display: none;}
+#cloud-g{display: none;}
+#web-g{display: none;}
+#leak-g{display: none;}
+

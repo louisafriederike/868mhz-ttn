@@ -26,6 +26,38 @@ form.addEventListener('submit', function(e) {
     var loc4 = new Audio('audio/loc4.wav');
     var loc5 = new Audio('audio/loc5.wav');
 
+    web1 = document.querySelector('#web1');
+    web2 = document.querySelector('#web2');
+    web3 = document.querySelector('#web3');
+    mud1 = document.querySelector('#mud1');
+    mud2 = document.querySelector('#mud2');
+    bug1 = document.querySelector('#bug1');
+    bug2 = document.querySelector('#bug2');
+    bug3 = document.querySelector('#bug3');
+    cloud1 = document.querySelector('#cloud1');
+    cloud2 = document.querySelector('#cloud2');
+    leak1 = document.querySelector('#leak1');
+    leak2 = document.querySelector('#leak2');
+    leak3 = document.querySelector('#leak3');
+    final1 = document.querySelector('#final1');
+    final2 = document.querySelector('#final2');
+    final3 = document.querySelector('#final3');
+    final4 = document.querySelector('#final4');
+
+
+    mud = document.querySelector('#mud');
+    leak = document.querySelector('#leak');
+    web = document.querySelector('#web');
+    bug = document.querySelector('#bug');
+    cloud = document.querySelector('#cloud');
+    mudg = document.querySelector('#mud-g');
+    leakg = document.querySelector('#leak-g');
+    webg = document.querySelector('#web-g');
+    bugg = document.querySelector('#bug-g');
+    cloudg = document.querySelector('#cloud-g');
+
+
+
 
     e.preventDefault();
     
@@ -75,8 +107,12 @@ form.addEventListener('submit', function(e) {
         back2.style.display = "flex";
         objective.style.display = "none";
         dreamlog.style.display = "flex";
-        $("#dreamlog").text("There was something more precious than gold. A new compound unifying and exposing the secrets of all minerals as one."); 
+        $("#dreamlog").text("don't get stuck, don't stop surfin, the swamp is yours."); 
         log1.style.display = "flex";
+        mud1.style.display = "block";
+        mud2.style.display = "block";
+        mud.style.display = "none";
+        mudg.style.display = "block";
     }
 
     if (inputString.includes('WEB') && loc2unlocked == false){
@@ -90,8 +126,13 @@ form.addEventListener('submit', function(e) {
         back2.style.display = "flex";
         objective.style.display = "none";
         dreamlog.style.display = "flex";
-        $("#dreamlog").text("Blood, sweat and tears. Devotion. Pumping adrenaline through my system and allowing me to perceive the secrets all around me."); 
+        $("#dreamlog").text("crawlers of the swamp, unite!"); 
         log2.style.display = "flex";
+        web1.style.display = "block";
+        web2.style.display = "block";
+        web3.style.display = "block";
+        web.style.display = "none";
+        webg.style.display = "block";
     }
 
     if (inputString.includes('BUG') && loc3unlocked == false){
@@ -105,8 +146,13 @@ form.addEventListener('submit', function(e) {
         back2.style.display = "flex";
         objective.style.display = "none";
         dreamlog.style.display = "flex";
-        $("#dreamlog").text("Humankind cannot gain anything without first giving something in return. To obtain, something of equal value must be lost. That is alchemy's first law of equivalent exchange."); 
+        $("#dreamlog").text("pesky trolls will never win if you keep this speed up ;)"); 
         log3.style.display = "flex";
+        bug1.style.display = "block";
+        bug2.style.display = "block";
+        bug3.style.display = "block";
+        bug.style.display = "none";
+        bugg.style.display = "block";
     }
 
     if (inputString.includes('CLOUD') && loc4unlocked == false){
@@ -120,8 +166,12 @@ form.addEventListener('submit', function(e) {
         back2.style.display = "flex";
         objective.style.display = "none";
         dreamlog.style.display = "flex";
-        $("#dreamlog").text("What are we striving for, the piece of the puzzle that never existed? An element we are missing, that stays forever out of reach. Salvation comes from accepting the incomplete within an infinitely unfinished world."); 
+        $("#dreamlog").text("above the heads is where treasure lies."); 
         log4.style.display = "flex";
+        cloud1.style.display = "block";
+        cloud2.style.display = "block";
+        cloud.style.display = "none";
+        cloudg.style.display = "block";
     }
 
     if (inputString.includes('LEAK') && loc5unlocked == false){
@@ -137,8 +187,13 @@ form.addEventListener('submit', function(e) {
         dreamlog.style.display = "flex";
         // document.getElementById("pentagram-locked").style.display = none;
         // document.getElementById("pentagram-unlocked").style.display = block;
-        $("#dreamlog").text("The philosophers stone, transmutating metals into gold. Mirrored, in constant traffic of lightrays and diffraction. Coexisting, gazing."); 
+        $("#dreamlog").text("drip drip drip..."); 
         log5.style.display = "flex";
+        leak1.style.display = "block";
+        leak2.style.display = "block";
+        leak3.style.display = "block";
+        leak.style.display = "none";
+        leakg.style.display = "block";
     }
 
     if (counter == 5){
@@ -148,10 +203,14 @@ form.addEventListener('submit', function(e) {
         back2.style.display = "none";
         objective.style.display = "flex";
         dreamlog.style.display = "none";
-        document.getElementById("uuid-faffbd01-47ef-4272-89ac-d31673ff6396").style.display = "none";
-        document.getElementById("uuid-28306325-d7ee-4a42-90d2-ebed74a80342").style.display = "block";
+        // document.getElementById("uuid-faffbd01-47ef-4272-89ac-d31673ff6396").style.display = "none";
+        // document.getElementById("uuid-28306325-d7ee-4a42-90d2-ebed74a80342").style.display = "block";
         $("#objective").text("...Quick!! Tell your bio-surfers to run for the doxxboxx!! You need to lead them through the swamp with this map!");
-}
+        final1.style.display = "block";
+        final2.style.display = "block";
+        final3.style.display = "block";
+        final4.style.display = "block";
+    }
 
     // if (inputString.includes('END')){
     //     playTrack1();

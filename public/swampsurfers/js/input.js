@@ -1,6 +1,11 @@
 var form = document.getElementById('form');
 var input = document.getElementById('input');
 let counter = 0;
+loc1unlocked = false;
+loc2unlocked = false;
+loc3unlocked = false;
+loc4unlocked = false;
+loc5unlocked = false;
 
 form.addEventListener('submit', function(e) {
     var input = document.getElementById('input');
@@ -13,18 +18,14 @@ form.addEventListener('submit', function(e) {
     dreamlog = document.querySelector('#dreamlog');
     back2 = document.querySelector('#back2');
     objective = document.querySelector('#objective');
-    loc1unlocked = false;
-    loc2unlocked = false;
-    loc3unlocked = false;
-    loc4unlocked = false;
-    loc5unlocked = false;
+
     var form = document.getElementById('form');
     var input = document.getElementById('input');
-    var loc1 = new Audio('audio/loc1.WAV');
-    var loc2 = new Audio('audio/loc2.WAV');
-    var loc3 = new Audio('audio/loc3.wav');
-    var loc4 = new Audio('audio/loc4.wav');
-    var loc5 = new Audio('audio/loc5.wav');
+    // var loc1 = new Audio('audio/loc1.WAV');
+    // var loc2 = new Audio('audio/loc2.WAV');
+    // var loc3 = new Audio('audio/loc3.wav');
+    // var loc4 = new Audio('audio/loc4.wav');
+    // var loc5 = new Audio('audio/loc5.wav');
 
     web1 = document.querySelector('#web1');
     web2 = document.querySelector('#web2');
@@ -97,7 +98,6 @@ form.addEventListener('submit', function(e) {
     }
 
     if (inputString.includes('MUD') && loc1unlocked == false){
-        playTrack1();
         counter++;
         loc1unlocked = true;
         console.log('loc1 unlocked');
@@ -116,7 +116,6 @@ form.addEventListener('submit', function(e) {
     }
 
     if (inputString.includes('WEB') && loc2unlocked == false){
-        playTrack1();
         counter++;
         loc2unlocked = true;
         console.log('loc2 unlocked');
@@ -133,10 +132,10 @@ form.addEventListener('submit', function(e) {
         web3.style.display = "block";
         web.style.display = "none";
         webg.style.display = "block";
+        
     }
 
     if (inputString.includes('BUG') && loc3unlocked == false){
-        playTrack1();
         counter++;
         loc3unlocked = true;
         console.log('loc3 unlocked');
@@ -156,7 +155,6 @@ form.addEventListener('submit', function(e) {
     }
 
     if (inputString.includes('CLOUD') && loc4unlocked == false){
-        playTrack1();
         counter++;
         loc4unlocked = true;
         console.log('loc4 unlocked');
@@ -175,7 +173,6 @@ form.addEventListener('submit', function(e) {
     }
 
     if (inputString.includes('LEAK') && loc5unlocked == false){
-        playTrack1();
         counter++;
         loc5unlocked = true;
         console.log('loc5 unlocked');
@@ -196,8 +193,7 @@ form.addEventListener('submit', function(e) {
         leakg.style.display = "block";
     }
 
-    if (counter == 5){
-        playTrack1();
+    if (loc1unlocked == true && loc2unlocked == true && loc3unlocked == true && loc4unlocked == true && loc5unlocked == true){
         console.log('finished');
         inputString = '';
         back2.style.display = "none";
@@ -317,11 +313,11 @@ function log5Open(){
     $("#dreamlog").text("The philosophers stone, transmutating metals into gold. Mirrored, in constant traffic of lightrays and diffraction. Coexisting, gazing.");
 }
 
-var loc1 = new Audio('./audio/loc1.WAV');
-var loc2 = new Audio('./audio/loc2.WAV');
-var loc3 = new Audio('./audio/loc3.wav');
-var loc4 = new Audio('./audio/loc4.wav');
-var loc5 = new Audio('./audio/loc5.wav');
+// var loc1 = new Audio('./audio/loc1.WAV');
+// var loc2 = new Audio('./audio/loc2.WAV');
+// var loc3 = new Audio('./audio/loc3.wav');
+// var loc4 = new Audio('./audio/loc4.wav');
+// var loc5 = new Audio('./audio/loc5.wav');
 r1 = document.querySelector('#rect13');
 r2 = document.querySelector('#rect23');
 r3 = document.querySelector('#rect35');

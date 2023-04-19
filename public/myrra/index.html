@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Agents of Myrra</title>
+    <style>
+        *{margin: 0px;
+        background-color: red;}
+
+      #video {
+        width: auto;
+        height: 100vh;
+        object-fit: contain;
+      }
+      #button {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        background-color: yellow;
+        border-radius: 3px;
+      }
+
+        #paragraph {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        width: 80%;
+        font-size: 3em;
+        color: white;
+        z-index:3;
+      }
+
+      #logo {
+        position: absolute;
+
+        z-index:5;
+      }
+
+      .keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 10px;
+  padding: 20px;
+  border: 2px solid #00ff00;
+  border-radius: 10px;
+  font-size: 2em;
+  background-color: #000000;
+  box-shadow: 0 0 20px #00ff00;
+}
+
+.key {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
+  color: #00ff00;
+  font-weight: bold;
+  font-size: 1.5em;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 2px solid #00ff00;
+}
+
+.key:focus {
+  outline: none;
+}
+
+.key:active {
+  background-color: #00ff00;
+  color: #000000;
+}
+    </style>
+  </head>
+  <body>
+    <p id="paragraph">Agents of Myrra</p>
+    <video id="video">
+      <source src="video1.mp4" type="video/mp4">
+    </video>
+  
+    <img src="icon-new.svg" id='logo' style="height: 200px;">
+    <button id="button" onclick="startGame()">Next</button>
+
+    <br>
+<button onmousedown="accelerate(-0.2)" onmouseup="accelerate(0.05)">ACCELERATE</button>
+<p>Use the ACCELERATE button to stay in the air</p>
+<p>How long can you stay alive?</p>
+  <div>
+
+  </div>
+
+  <div class="keypad">
+    <button class="key" data-value="1">1</button>
+    <button class="key" data-value="2">2</button>
+    <button class="key" data-value="3">3</button>
+    <button class="key" data-value="4">4</button>
+    <button class="key" data-value="5">5</button>
+    <button class="key" data-value="6">6</button>
+    <button class="key" data-value="7">7</button>
+    <button class="key" data-value="8">8</button>
+    <button class="key" data-value="9">9</button>
+  </div>
+
+  
+<script>
+  const sequence = [6, 8, 7];
+  const input = [];
+
+  const keypad = document.querySelector('.keypad');
+  const body = document.querySelector('body');
+
+  keypad.addEventListener('click', (event) => {
+    const value = parseInt(event.target.dataset.value);
+    if (isNaN(value)) return;
+
+    input.push(value);
+    if (input.length > sequence.length) {
+      input.shift();
+    }
+
+    if (input.toString() === sequence.toString()) {
+      body.style.backgroundColor = 'black';
+    }
+  });
+</script>
+  
+    <script>
+      var paragraph = document.getElementById("paragraph");
+      var video = document.getElementById("video");
+      var button = document.getElementById("button");
+      var videos = ["video1.mp4", "video2.mp4", "video3.mp4", "video4.mp4"];
+      var currentVideoIndex = 0;
+  
+      var paragraphs = [
+        "I need your help.",
+        "My world is in danger.",
+        "We share the same space.",
+        "We share the same ocean of signals. I am trapped in my world and you and yours. There are six crossover points between the worlds around here. Listen closely to me, I can talk to you through the pointboxes. Follow me through my world!"
+      ];
+  
+      video.addEventListener("ended", function() {
+        if (currentVideoIndex < videos.length - 1) {
+          button.style.display = "block";
+        } else {
+          button.style.display = "none";
+        }
+      });
+  
+      function nextVideo() {
+        if (currentVideoIndex < videos.length - 1) {
+          currentVideoIndex++;
+          video.src = videos[currentVideoIndex];
+          paragraph.textContent = paragraphs[currentVideoIndex];
+          button.style.display = "none";
+          video.play();
+        }
+      }
+    </script>
+<script>
+
+  var myGamePiece;
+  var myObstacles = [];
+  var myScore;
+  
+  function startGame() {
+      myGamePiece = new component(30, 30, "red", 10, 120);
+      myGamePiece.gravity = 0.05;
+      myScore = new component("30px", "Consolas", "black", 280, 40, "text");
+      myGameArea.start();
+  }
+  
+  var myGameArea = {
+      canvas : document.createElement("canvas"),
+      start : function() {
+          this.canvas.width = 480;
+          this.canvas.height = 270;
+          this.context = this.canvas.getContext("2d");
+          document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+          this.frameNo = 0;
+          this.interval = setInterval(updateGameArea, 20);
+          },
+      clear : function() {
+          this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+      }
+  }
+  
+  function component(width, height, color, x, y, type) {
+      this.type = type;
+      this.score = 0;
+      this.width = width;
+      this.height = height;
+      this.speedX = 0;
+      this.speedY = 0;    
+      this.x = x;
+      this.y = y;
+      this.gravity = 0;
+      this.gravitySpeed = 0;
+      this.update = function() {
+          ctx = myGameArea.context;
+          if (this.type == "text") {
+              ctx.font = this.width + " " + this.height;
+              ctx.fillStyle = color;
+              ctx.fillText(this.text, this.x, this.y);
+          } else {
+              ctx.fillStyle = color;
+              ctx.fillRect(this.x, this.y, this.width, this.height);
+          }
+      }
+      this.newPos = function() {
+          this.gravitySpeed += this.gravity;
+          this.x += this.speedX;
+          this.y += this.speedY + this.gravitySpeed;
+          this.hitBottom();
+      }
+      this.hitBottom = function() {
+          var rockbottom = myGameArea.canvas.height - this.height;
+          if (this.y > rockbottom) {
+              this.y = rockbottom;
+              this.gravitySpeed = 0;
+          }
+      }
+      this.crashWith = function(otherobj) {
+          var myleft = this.x;
+          var myright = this.x + (this.width);
+          var mytop = this.y;
+          var mybottom = this.y + (this.height);
+          var otherleft = otherobj.x;
+          var otherright = otherobj.x + (otherobj.width);
+          var othertop = otherobj.y;
+          var otherbottom = otherobj.y + (otherobj.height);
+          var crash = true;
+          if ((mybottom < othertop) || (mytop > otherbottom) || (myright < otherleft) || (myleft > otherright)) {
+              crash = false;
+          }
+          return crash;
+      }
+  }
+  
+  function updateGameArea() {
+      var x, height, gap, minHeight, maxHeight, minGap, maxGap;
+      for (i = 0; i < myObstacles.length; i += 1) {
+          if (myGamePiece.crashWith(myObstacles[i])) {
+              return;
+          } 
+      }
+      myGameArea.clear();
+      myGameArea.frameNo += 1;
+      if (myGameArea.frameNo == 1 || everyinterval(150)) {
+          x = myGameArea.canvas.width;
+          minHeight = 20;
+          maxHeight = 200;
+          height = Math.floor(Math.random()*(maxHeight-minHeight+1)+minHeight);
+          minGap = 50;
+          maxGap = 200;
+          gap = Math.floor(Math.random()*(maxGap-minGap+1)+minGap);
+          myObstacles.push(new component(10, height, "green", x, 0));
+          myObstacles.push(new component(10, x - height - gap, "green", x, height + gap));
+      }
+      for (i = 0; i < myObstacles.length; i += 1) {
+          myObstacles[i].x += -1;
+          myObstacles[i].update();
+      }
+      myScore.text="SCORE: " + myGameArea.frameNo;
+      myScore.update();
+      myGamePiece.newPos();
+      myGamePiece.update();
+  }
+  
+  function everyinterval(n) {
+      if ((myGameArea.frameNo / n) % 1 == 0) {return true;}
+      return false;
+  }
+  
+  function accelerate(n) {
+      myGamePiece.gravity = n;
+  }
+  </script>
+  
+  </body>
+</html>

@@ -4,7 +4,7 @@
     <title>Agents of Myrra</title>
     <style>
         *{margin: 0px;
-        background-color: red;}
+        background-color: rgb(124, 134, 201);}
 
       #video {
         width: auto;
@@ -20,6 +20,7 @@
         z-index: 2;
         background-color: yellow;
         border-radius: 3px;
+        font-size: 4em;
       }
 
         #paragraph {
@@ -40,17 +41,22 @@
         z-index:5;
       }
 
-      .keypad {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  gap: 10px;
-  padding: 20px;
-  border: 2px solid #00ff00;
-  border-radius: 10px;
-  font-size: 2em;
-  background-color: #000000;
-  box-shadow: 0 0 20px #00ff00;
+    .keypad {
+    display: none;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+    padding: 20px;
+    border: 2px solid #00ff00;
+    border-radius: 10px;
+    font-size: 2em;
+    background-color: #000000;
+    box-shadow: 0 0 20px #00ff00;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
 }
 
 .key {
@@ -83,12 +89,12 @@
     </video>
   
     <img src="icon-new.svg" id='logo' style="height: 200px;">
-    <button id="button" onclick="startGame()">Next</button>
+    <button id="button" onclick="nextVideo()">Next</button>
 
     <br>
-<button onmousedown="accelerate(-0.2)" onmouseup="accelerate(0.05)">ACCELERATE</button>
+<!-- <button onmousedown="accelerate(-0.2)" onmouseup="accelerate(0.05)">ACCELERATE</button>
 <p>Use the ACCELERATE button to stay in the air</p>
-<p>How long can you stay alive?</p>
+<p>How long can you stay alive?</p> -->
   <div>
 
   </div>
@@ -136,10 +142,10 @@
       var currentVideoIndex = 0;
   
       var paragraphs = [
-        "I need your help.",
-        "My world is in danger.",
-        "We share the same space.",
-        "We share the same ocean of signals. I am trapped in my world and you and yours. There are six crossover points between the worlds around here. Listen closely to me, I can talk to you through the pointboxes. Follow me through my world!"
+        "Ik roep naar jou vanuit een parallelle wereld, een wereld onzichtbaar voor het oog maar niet voor de zintuigen.",
+        "We delen dezelfde ruimte, mijn wereld rust op dezelfde grond als de jouwe, zover als jouw ogen kunnen reiken ligt Myrra. Onze werelden sturen voortdurend geheime boodschappen via elektromagnetische golven.",
+        "Jouw agentenpas is heel bijzonder, omdat het de enige tool is die nog steeds cross-communicatie mogelijk maakt tussen Myrra en Aarde. Ik zal je de weg wijzen, tik op de berichten om contact met mij te maken.",
+        "We delen dezelfde oceaan van signalen. De laatste tijd is het apparaat dat onze twee werelden verbindt losgekoppeld en het is hier bij Tetem. Ik heb jou nodig om mij te volgen en de code te vinden om het weer aan te zetten, zodat mijn wereld weer goed kan communiceren!"
       ];
   
       video.addEventListener("ended", function() {
@@ -148,6 +154,7 @@
         } else {
           button.style.display = "none";
         }
+        showKeypad(currentVideoIndex);
       });
   
       function nextVideo() {
@@ -278,6 +285,16 @@
   function accelerate(n) {
       myGamePiece.gravity = n;
   }
+  function showKeypad(currentVideoIndex) {
+  if (currentVideoIndex == 3) {
+    keypad.style.display = "grid";
+  } else {
+    keypad.style.display = "none";
+  }
+}
+  
+   
+
   </script>
   
   </body>

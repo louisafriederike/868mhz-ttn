@@ -1,26 +1,91 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Agents of Myrra</title>
+    <title>Agenten van Myrra</title>
     <script type="text/javascript">
       function toggleFullscreen() {
         if (document.fullscreenElement) {
           document.exitFullscreen();
+          document.getElementById("fullscreen-button").style.display = "none";
         } else {
           document.documentElement.requestFullscreen();
+          document.getElementById("fullscreen-button").style.display = "none";
+        }
+      }
+
+      var audio1 = new Audio('1.mp3');
+      var audio2 = new Audio('2.mp3');
+      var audio3 = new Audio('3.mp3');
+      var audio4 = new Audio('4.mp3');
+
+      function playAudio(index) {
+        switch (index) {
+          case 0:
+            audio1.play();
+            break;
+          case 1:
+            audio2.play();
+            break;
+          case 2:
+            audio3.play();
+            break;
+          case 3:
+            audio4.play();
+            break;
+        }
+      }
+
+      function pauseAudio(index) {
+        switch (index) {
+          case 0:
+            audio1.pause();
+            break;
+          case 1:
+            audio2.pause();
+            break;
+          case 2:
+            audio3.pause();
+            break;
+          case 3:
+            audio4.pause();
+            break;
         }
       }
     </script>
+    </script>
     
     <style>
+      @font-face {
+        font-family: 'Tifax';
+        src: url('tifax.ttf') format('truetype');
+      }
+
         *{margin: 0px;
-        background-color: rgb(124, 134, 201);}
+          padding: 0px;
+          overflow-y: hidden;
+        background-color: rgb(208, 64, 20)}
+
+        body{
+          font-family: 'Roboto Mono', monospace;
+        }
 
       #video {
         width: auto;
         height: 100vh;
         object-fit: contain;
       }
+
+      #fullscreen-button {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        background-color: #bdbebb;
+        border-radius: 1px;
+  
+      }
+
       #button {
         display: block;
         position: absolute;
@@ -28,9 +93,11 @@
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 2;
-        background-color: yellow;
+        background-color: #b6ff34;
         border-radius: 3px;
-        font-size: 4em;
+        font-family: 'Roboto Mono', monospace;
+        font-size:2em;
+        text-shadow:rgb(208, 64, 20);
       }
 
         #paragraph {
@@ -41,7 +108,7 @@
         text-align: center;
         width: 80%;
         font-size: 3em;
-        color: white;
+        color: rgb(0, 0, 0);
         z-index:3;
       }
 
@@ -93,225 +160,71 @@
     </style>
   </head>
   <body>
-    <p id="paragraph">Agents of Myrra</p>
+    <p id="paragraph">Agenten van Myrra</p> 
     <video id="video">
       <source src="video1.mp4" type="video/mp4">
     </video>
-    <button onclick="toggleFullscreen()">Fullscreen</button>
+    <button id="fullscreen-button" onclick="toggleFullscreen()">fullscreen</button>
 
     <img src="icon-new.svg" id='logo' style="height: 200px;">
-    <button id="button" onclick="nextVideo()">Next</button>
+    <button id="button" onclick="nextVideo()">volgende stap</button>
 
-    <br>
-<!-- <button onmousedown="accelerate(-0.2)" onmouseup="accelerate(0.05)">ACCELERATE</button>
-<p>Use the ACCELERATE button to stay in the air</p>
-<p>How long can you stay alive?</p> -->
-  <div>
-
-  </div>
-
-  <div class="keypad">
-    <button class="key" data-value="1">1</button>
-    <button class="key" data-value="2">2</button>
-    <button class="key" data-value="3">3</button>
-    <button class="key" data-value="4">4</button>
-    <button class="key" data-value="5">5</button>
-    <button class="key" data-value="6">6</button>
-    <button class="key" data-value="7">7</button>
-    <button class="key" data-value="8">8</button>
-    <button class="key" data-value="9">9</button>
-  </div>
-
-  
-<script>
-  const sequence = [6, 8, 7];
-  const input = [];
-
-  const keypad = document.querySelector('.keypad');
-  const body = document.querySelector('body');
-
-  keypad.addEventListener('click', (event) => {
-    const value = parseInt(event.target.dataset.value);
-    if (isNaN(value)) return;
-
-    input.push(value);
-    if (input.length > sequence.length) {
-      input.shift();
-    }
-
-    if (input.toString() === sequence.toString()) {
-      body.style.backgroundColor = 'black';
-    }
-  });
 </script>
   
-    <script>
-      var paragraph = document.getElementById("paragraph");
-      var video = document.getElementById("video");
-      var button = document.getElementById("button");
-      var videos = ["video1.mp4", "video2.mp4", "video3.mp4", "video4.mp4"];
-      var currentVideoIndex = 0;
-  
-      var paragraphs = [
-        "Ik roep naar jou vanuit een parallelle wereld, een wereld onzichtbaar voor het oog maar niet voor de zintuigen.",
-        "We delen dezelfde ruimte, mijn wereld rust op dezelfde grond als de jouwe, zover als jouw ogen kunnen reiken ligt Myrra. Onze werelden sturen voortdurend geheime boodschappen via elektromagnetische golven.",
-        "Jouw agentenpas is heel bijzonder, omdat het de enige tool is die nog steeds cross-communicatie mogelijk maakt tussen Myrra en Aarde. Ik zal je de weg wijzen, tik op de berichten om contact met mij te maken.",
-        "We delen dezelfde oceaan van signalen. De laatste tijd is het apparaat dat onze twee werelden verbindt losgekoppeld en het is hier bij Tetem. Ik heb jou nodig om mij te volgen en de code te vinden om het weer aan te zetten, zodat mijn wereld weer goed kan communiceren!"
-      ];
-  
-      video.addEventListener("ended", function() {
-        if (currentVideoIndex < videos.length - 1) {
-          button.style.display = "block";
-        } else {
-          button.style.display = "none";
-        }
-        showKeypad(currentVideoIndex);
-      });
-  
-      function nextVideo() {
-        if (currentVideoIndex < videos.length - 1) {
-          currentVideoIndex++;
-          video.src = videos[currentVideoIndex];
-          paragraph.textContent = paragraphs[currentVideoIndex];
-          button.style.display = "none";
-          video.play();
-        }
-      }
-    </script>
-<script>
 
-  var myGamePiece;
-  var myObstacles = [];
-  var myScore;
-  
-  function startGame() {
-      myGamePiece = new component(30, 30, "red", 10, 120);
-      myGamePiece.gravity = 0.05;
-      myScore = new component("30px", "Consolas", "black", 280, 40, "text");
-      myGameArea.start();
-  }
-  
-  var myGameArea = {
-      canvas : document.createElement("canvas"),
-      start : function() {
-          this.canvas.width = 480;
-          this.canvas.height = 270;
-          this.context = this.canvas.getContext("2d");
-          document.body.insertBefore(this.canvas, document.body.childNodes[0]);
-          this.frameNo = 0;
-          this.interval = setInterval(updateGameArea, 20);
-          },
-      clear : function() {
-          this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
-      }
-  }
-  
-  function component(width, height, color, x, y, type) {
-      this.type = type;
-      this.score = 0;
-      this.width = width;
-      this.height = height;
-      this.speedX = 0;
-      this.speedY = 0;    
-      this.x = x;
-      this.y = y;
-      this.gravity = 0;
-      this.gravitySpeed = 0;
-      this.update = function() {
-          ctx = myGameArea.context;
-          if (this.type == "text") {
-              ctx.font = this.width + " " + this.height;
-              ctx.fillStyle = color;
-              ctx.fillText(this.text, this.x, this.y);
-          } else {
-              ctx.fillStyle = color;
-              ctx.fillRect(this.x, this.y, this.width, this.height);
-          }
-      }
-      this.newPos = function() {
-          this.gravitySpeed += this.gravity;
-          this.x += this.speedX;
-          this.y += this.speedY + this.gravitySpeed;
-          this.hitBottom();
-      }
-      this.hitBottom = function() {
-          var rockbottom = myGameArea.canvas.height - this.height;
-          if (this.y > rockbottom) {
-              this.y = rockbottom;
-              this.gravitySpeed = 0;
-          }
-      }
-      this.crashWith = function(otherobj) {
-          var myleft = this.x;
-          var myright = this.x + (this.width);
-          var mytop = this.y;
-          var mybottom = this.y + (this.height);
-          var otherleft = otherobj.x;
-          var otherright = otherobj.x + (otherobj.width);
-          var othertop = otherobj.y;
-          var otherbottom = otherobj.y + (otherobj.height);
-          var crash = true;
-          if ((mybottom < othertop) || (mytop > otherbottom) || (myright < otherleft) || (myleft > otherright)) {
-              crash = false;
-          }
-          return crash;
-      }
-  }
-  
-  function updateGameArea() {
-      var x, height, gap, minHeight, maxHeight, minGap, maxGap;
-      for (i = 0; i < myObstacles.length; i += 1) {
-          if (myGamePiece.crashWith(myObstacles[i])) {
-              return;
-          } 
-      }
-      myGameArea.clear();
-      myGameArea.frameNo += 1;
-      if (myGameArea.frameNo == 1 || everyinterval(150)) {
-          x = myGameArea.canvas.width;
-          minHeight = 20;
-          maxHeight = 200;
-          height = Math.floor(Math.random()*(maxHeight-minHeight+1)+minHeight);
-          minGap = 50;
-          maxGap = 200;
-          gap = Math.floor(Math.random()*(maxGap-minGap+1)+minGap);
-          myObstacles.push(new component(10, height, "green", x, 0));
-          myObstacles.push(new component(10, x - height - gap, "green", x, height + gap));
-      }
-      for (i = 0; i < myObstacles.length; i += 1) {
-          myObstacles[i].x += -1;
-          myObstacles[i].update();
-      }
-      myScore.text="SCORE: " + myGameArea.frameNo;
-      myScore.update();
-      myGamePiece.newPos();
-      myGamePiece.update();
-  }
-  
-  function everyinterval(n) {
-      if ((myGameArea.frameNo / n) % 1 == 0) {return true;}
-      return false;
-  }
-  
-  function accelerate(n) {
-      myGamePiece.gravity = n;
-  }
-  function showKeypad(currentVideoIndex) {
-  if (currentVideoIndex == 3) {
-    keypad.style.display = "grid";
-  } else {
-    keypad.style.display = "none";
+
+<audio id="audio">
+  <source src="" type="audio/mp3">
+</audio>
+
+<script>
+  var audio = document.getElementById("audio");
+  var videos = ["video1.mp4", "video2.mp4", "video3.mp4", "video4.mp4","video1.mp4", "video2.mp4", "video3.mp4", "video4.mp4"];
+  var audios = ["1.mp3", "2.mp3", "3.mp3", "4.mp3","5.mp3", "6.mp3", "7.mp3", "8.mp3"];
+  var button = document.getElementById("button");
+  var videoElement;
+
+
+  var currentVideoIndex = -1;
+
+  var paragraphs = [
+        "jouw agenten missie",
+        "de agenten pass",
+        "neem contact op",
+        "navigeren"
+      ];
+      for (var i = 0; i < videos.length; i++) {
+  videos[i].muted = true;
+}
+  video.addEventListener("ended", function() {
+    if (currentVideoIndex < videos.length - 1) {
+      button.style.display = "block";
+    } else {
+      button.style.display = "none";
+    }
+    showKeypad(currentVideoIndex);
+  });
+  function nextVideo() {
+  if (currentVideoIndex < videos.length - 1) {
+    currentVideoIndex++;
+    video.src = videos[currentVideoIndex];
+    paragraph.textContent = paragraphs[currentVideoIndex];
+    button.style.display = "none";
+    video.loop = true;
+    video.muted = true;
+    video.play();
+    audio.src = audios[currentVideoIndex];
+    audio.play();
+    audio.addEventListener("ended", function() {
+      button.style.display = "block";
+      video.loop = false;
+    });
   }
 }
+
   
-function showMap(currentVideoIndex) {
-  if (currentVideoIndex == 3) {
-    keypad.style.display = "grid";
-  } else {
-    keypad.style.display = "none";
-  }
-}
-   
+</script>
+
 
   </script>
   

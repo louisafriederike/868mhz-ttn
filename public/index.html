@@ -322,6 +322,25 @@
                                 </div>
                         </div>
                         <div class="section" id="dreamlog">
+            <div style="display: flex; align-items: center;">
+
+              <button id="startButton" style="flex: 1; margin-right: 2px; width: fit-content" onclick="togglePlay()">the story</button>
+              <!-- Replay Button -->
+              <button id="replayButton" style="width: fit-content" onclick="replayAudio()">⏮</button>
+              <!-- Custom Audio Controls -->
+         
+              <!-- Audio Player -->
+              <audio id="myAudio" preload="auto">
+                  <source src="audio/EixogenStory1.mp3" type="audio/mpeg">
+                  Your browser does not support the audio element.
+              </audio>
+            </div>
+            <div class="custom-audio-controls">
+              <br>
+              <div style="margin-top: 3px; margin-bottom: 10px;" class="custom-progress-bar" onclick="seek(event)">
+                  <div class="custom-progress-bar-fill"></div>
+              </div> <br><br>
+          </div>
 
                             <p></p>  
                             </div>
@@ -335,19 +354,19 @@
                         </div>
                         
                         <div class="section" id="log1">          
-                        <p onclick="log1Open()">LOG 1  03:02:00  01-10-22 CHANNEL 24<br></p>
+                        <p onclick="log1Open()">LOG 1  03:02:00  03-07-25 CHANNEL 24<br></p>
                         </div> 
                         <div class="section" id="log2">   
-                        <p onclick="log2Open()">LOG 2  02:42:00  02-10-22 CHANNEL 82<br></p>
+                        <p onclick="log2Open()">LOG 2  02:42:00  21-07-25 CHANNEL 82<br></p>
                         </div>
                         <div class="section" id="log3">             
-                        <p onclick="log3Open()">LOG 3  03:36:00  03-10-22 CHANNEL 62<br></p>
+                        <p onclick="log3Open()">LOG 3  03:36:00  29-07-25 CHANNEL 62<br></p>
                         </div>
                         <div class="section" id="log4">   
-                        <p onclick="log4Open()">LOG 4  03:86:00  05-10-22 CHANNEL 22<br></p>
+                        <p onclick="log4Open()">LOG 4  03:86:00  02-08-25 CHANNEL 22<br></p>
                         </div>
                         <div class="section" id="log5">                 
-                        <p onclick="log5Open()">LOG 5  06:86:00  06-10-22 CHANNEL 15<br></p>   
+                        <p onclick="log5Open()">LOG 5  06:86:00  06-08-25 CHANNEL 15<br></p>   
                         </div>              
                        
                         <div class="section" id="log">

@@ -143,7 +143,7 @@ form.addEventListener('submit', function(e) {
     if (inputString.includes('ADAPTIVE')){
         levelTwo();
         playTrack1();
-     
+        audioplayer.style.display = "flex";
         // audiointro.style.display = "none";
         // audio1.style.display = "block";
         localStorage.setItem('gateway','1');
@@ -157,6 +157,7 @@ form.addEventListener('submit', function(e) {
      if (inputString.includes('EMBEDDED')){
         levelThree();
         playTrack1();
+        audioplayer.style.display = "flex";
         localStorage.setItem('gateway','2');
         console.log(localStorage.getItem('gateway'));
         // loc2.play();
@@ -167,6 +168,7 @@ form.addEventListener('submit', function(e) {
     if (inputString.includes('PERVASIVE')){
         levelFour();
         playTrack1();
+        audioplayer.style.display = "flex";
         localStorage.setItem('gateway','3');
         console.log(localStorage.getItem('gateway'));
         // loc3.play();
@@ -178,6 +180,7 @@ form.addEventListener('submit', function(e) {
     if (inputString.includes('ETERNAL')){
         levelFive();
         playTrack1();
+        audioplayer.style.display = "flex";
         localStorage.setItem('gateway','4');
         console.log(localStorage.getItem('gateway'));
         // loc4.play();
@@ -189,6 +192,7 @@ form.addEventListener('submit', function(e) {
     if (inputString.includes('DRIFTING')){
         levelSix();
         playTrack1();
+        audioplayer.style.display = "flex";
         localStorage.setItem('gateway','6');
         console.log(localStorage.getItem('gateway'));
         // loc5.play();
@@ -208,6 +212,7 @@ back = document.querySelector('#back');
 back2 = document.querySelector('#back2');
 dreamlog = document.querySelector('#dreamlog');
 objective = document.querySelector('#objective');
+audioplayer = document.querySelector('#audioplayer');
 
 
 function showLog(){                          
@@ -233,11 +238,13 @@ function showAbout(){
 function backAgain(){  
     log.style.visibility = "hidden";                        
     back.style.visibility = "hidden";
+    audioplayer.style.display = "none";
 }
 
 function backAgain2(){  
     dreamlog.style.display = "none";                       
     back2.style.display = "none";
+    audioplayer.style.display = "none";
     objective.style.display = "flex";
 }
 

@@ -134,7 +134,6 @@ form.addEventListener('submit', function(e) {
     if(inputString.includes('TEST')){
     
     loadAudio("audio/adaptable-one.mp3");
-    console.log("test received");
         document.getElementById("audio-name").textContent = "Adaptive";
     }
     
@@ -150,6 +149,8 @@ form.addEventListener('submit', function(e) {
         localStorage.setItem('gateway','1');
         console.log(localStorage.getItem('gateway'));
         // loc1.play();
+          loadAudio("audio/adaptable-one.mp3");
+        document.getElementById("audio-name").textContent = "Adaptive";
         
     }
     
@@ -159,6 +160,8 @@ form.addEventListener('submit', function(e) {
         localStorage.setItem('gateway','2');
         console.log(localStorage.getItem('gateway'));
         // loc2.play();
+          loadAudio("audio/embedded-two.mp3");
+        document.getElementById("audio-name").textContent = "Embedded";
     }
 
     if (inputString.includes('PERVASIVE')){
@@ -167,6 +170,8 @@ form.addEventListener('submit', function(e) {
         localStorage.setItem('gateway','3');
         console.log(localStorage.getItem('gateway'));
         // loc3.play();
+          loadAudio("audio/pervasive-three.mp3");
+        document.getElementById("audio-name").textContent = "Pervasive";
     }
 
     
@@ -176,6 +181,8 @@ form.addEventListener('submit', function(e) {
         localStorage.setItem('gateway','4');
         console.log(localStorage.getItem('gateway'));
         // loc4.play();
+          loadAudio("audio/eternal-four.mp3");
+        document.getElementById("audio-name").textContent = "Eternal";
     }
 
 
@@ -185,6 +192,8 @@ form.addEventListener('submit', function(e) {
         localStorage.setItem('gateway','6');
         console.log(localStorage.getItem('gateway'));
         // loc5.play();
+          loadAudio("audio/drifting.mp3");
+        document.getElementById("audio-name").textContent = "Drifting Further";
     }
     else{
         $("#input").text("inactive port");

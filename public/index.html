@@ -321,31 +321,32 @@
                           
                                 </div>
                         </div>
+                         <div class="section" id="audioplayer">
+                         <div class="section" id="audio-box" style="text-align: center;">
+                        <audio id="myAudio" preload="auto">
+                        <source id="audioSource" src="audio/intro.WAV" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                     </audio>
+
+                     <!-- Audio Controls -->
+                     <div class="custom-audio-controls">
+                        <div class="custom-progress-bar" onclick="seek(event)">
+                           <div class="custom-progress-bar-fill"></div>
+                        </div>
+                        <br>
+                        <!-- Play/Pause and Replay Buttons -->
+                        <button id="startButton" onclick="togglePlay()">[audio log]</button>
+                        <button id="replayButton" onclick="replayAudio()">⏮</button>
+                     </div>
+                              </div>
+                              </div> 
+                        
                         <div class="section" id="dreamlog">
-            <div style="display: flex; align-items: center;">
 
-              <button id="startButton" style="flex: 1; margin-right: 2px; width: fit-content" onclick="togglePlay()">the story</button>
-              <!-- Replay Button -->
-              <button id="replayButton" style="width: fit-content" onclick="replayAudio()">⏮</button>
-              <!-- Custom Audio Controls -->
-         
-              <!-- Audio Player -->
-              <audio id="myAudio" preload="auto">
-                  <source src="audio/EixogenStory1.mp3" type="audio/mpeg">
-                  Your browser does not support the audio element.
-              </audio>
-            </div>
-            <div class="custom-audio-controls">
-              <br>
-              <div style="margin-top: 3px; margin-bottom: 10px;" class="custom-progress-bar" onclick="seek(event)">
-                  <div class="custom-progress-bar-fill"></div>
-              </div> <br><br>
-          </div>
-
-                            <p></p>  
-                            </div>
-                            <div class="section" id="back2" onclick="backAgain2()">
-                                ↪ log 
+                                             <p></p>  
+                        </div>
+                        <div class="section" id="back2" onclick="backAgain2()">
+                                                ↪ log 
                         </div>
                         <div class="section" id="objective">
                         <p>OBJECTIVE:<br>Did you ever sleepwalk? Moving through two realities simultaneously can be disorienting, even dangerous.
@@ -404,8 +405,10 @@
       <!-- <video class="fullscreen-video" id="myVideo" autoplay="autoplay" muted loop>
          <source src="img/bg.m4v">   
      </video> -->
-     
+       
+
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="js/audio.js"></script>
         <script type="text/javascript" src="js/fence.js"></script>
         <script type="text/javascript" src="js/level.js"></script>
         <script type="text/javascript" src="js/input.js"></script>

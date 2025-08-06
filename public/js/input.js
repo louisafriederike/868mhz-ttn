@@ -131,9 +131,20 @@ form.addEventListener('submit', function(e) {
         console.log(inputString);
     }
 
-    if (inputString.includes('KEY')){
+    if(inputString.includes('TEST')){
+    
+    loadAudio("audio/adaptable-one.mp3");
+    console.log("test received");
+        
+    }
+    
+
+    
+
+    if (inputString.includes('ADAPTIVE')){
         levelTwo();
         playTrack1();
+     
         // audiointro.style.display = "none";
         // audio1.style.display = "block";
         localStorage.setItem('gateway','1');
@@ -142,7 +153,7 @@ form.addEventListener('submit', function(e) {
         
     }
     
-     if (inputString.includes('DOOR')){
+     if (inputString.includes('EMBEDDED')){
         levelThree();
         playTrack1();
         localStorage.setItem('gateway','2');
@@ -150,7 +161,7 @@ form.addEventListener('submit', function(e) {
         // loc2.play();
     }
 
-    if (inputString.includes('SNAIL')){
+    if (inputString.includes('PERVASIVE')){
         levelFour();
         playTrack1();
         localStorage.setItem('gateway','3');
@@ -159,7 +170,7 @@ form.addEventListener('submit', function(e) {
     }
 
     
-    if (inputString.includes('AIR')){
+    if (inputString.includes('ETERNAL')){
         levelFive();
         playTrack1();
         localStorage.setItem('gateway','4');
@@ -168,7 +179,7 @@ form.addEventListener('submit', function(e) {
     }
 
 
-    if (inputString.includes('drifting_further')){
+    if (inputString.includes('DRIFTING')){
         levelSix();
         playTrack1();
         localStorage.setItem('gateway','6');

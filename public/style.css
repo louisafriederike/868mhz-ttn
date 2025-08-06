@@ -348,7 +348,10 @@ button:active{
 #audio-box{
   display: block;
   background-color: red;
-  margin:2em;
+  margin-left:5em;
+  margin-right:5em;
+    margin-top:1em;
+  margin-bottom:1em;
 }
 
 #audiofile-intro{

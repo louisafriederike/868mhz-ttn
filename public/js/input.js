@@ -135,7 +135,7 @@ form.addEventListener('submit', function(e) {
     
     loadAudio("audio/adaptable-one.mp3");
     console.log("test received");
-        
+        document.getElementById("audio-name").textContent = "Adaptive";
     }
     
 

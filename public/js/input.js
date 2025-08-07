@@ -403,7 +403,7 @@ function breadCrumb7(){
 
 function breadCrumb8(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text("Follow divine guidance into the heart of the village. At pink flowers, turn left until you find me.");
+    $("#objective").text("Follow divine guidance into the heart of the village. When you arrive at the heart and spot the draping pink flowers, turn left until you find me hidden in vines.");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";
@@ -465,7 +465,7 @@ function objective3(){
 
 function objective4(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text("It's time to take a rest and grab a book. I've heard there was one about a gentle monster turning evil after being shunned. Close to the end, Edgar will tell you the channel number.");
+    $("#objective").text("It's time to take a rest and grab a book. I've heard there was one about a gentle monster turning evil after being shunned. Close to the end, Edgar will tell you the channel number beside.");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";
@@ -521,7 +521,7 @@ function riddle4(){
 
 function riddle5(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text("I have hidden the final log in the heat generator. Infinite transfer of energy. Changing shapes. Morphing.");
+    $("#objective").text("I have hidden the final log in the heat generator. Enter for infinite transfer of energy. Changing shapes. Morphing.");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";

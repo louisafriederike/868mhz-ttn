@@ -19,7 +19,7 @@ socket.on('node5', function(sensorData){
     // //  if(reading==11 && nodeID=="260BD7A6"){
     // //    alert('node5 unlocked.');
     // //  }
- if(localStorage.getItem("gateway") == "4" && reading==15 && nodeID == "eui-0004a30b001bdee4"){
+ if(localStorage.getItem("gateway") == "4" && reading==12 && nodeID == "eui-0004a30b001bdee4"){
         // alert('node 5 unlocked');
         riddle5();
       }
@@ -36,7 +36,7 @@ socket.on('node4', function(sensorData){
     // //  if(reading==11 && nodeID=="260BD7A6"){
     // //    alert('node5 unlocked.');
     // //  }
-    if(localStorage.getItem("gateway") == "3" && reading==22 && nodeID == "eui-0004a30b001c2457"){
+    if(localStorage.getItem("gateway") == "3" && reading==7 && nodeID == "eui-0004a30b001c2457"){
         // alert('node 4 unlocked');
         riddle4();
       }
@@ -53,7 +53,7 @@ socket.on('node3', function(sensorData){
     // //  if(reading==11 && nodeID=="260BD7A6"){
     // //    alert('node5 unlocked.');
     // //  }
-    if(localStorage.getItem("gateway") == "2" && reading==62 && nodeID == "eui-0004a30b001bad22"){
+    if(localStorage.getItem("gateway") == "2" && reading==10 && nodeID == "eui-0004a30b001bad22"){
         // alert('node 3 unlocked');
         riddle3();
         }
@@ -70,7 +70,7 @@ socket.on('node2', function(sensorData){
     // //  if(reading==11 && nodeID=="260BD7A6"){
     // //    alert('node5 unlocked.');
     // //  }
-    if(localStorage.getItem("gateway") == "1" && reading==82 && nodeID == "eui-0004a30b001c21b1"){
+    if(localStorage.getItem("gateway") == "1" && reading==15 && nodeID == "eui-0004a30b001c21b1"){
         // alert('node 2 unlocked');
         riddle2();
         }

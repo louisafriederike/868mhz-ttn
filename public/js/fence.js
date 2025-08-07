@@ -23,20 +23,20 @@
     
     if (navigator.geolocation) {
       
-      node1Lat = 41.1607583;
-      node1Long = 8.6207115;
+      node1Lat = 46.1770133;
+      node1Long = 13.6039133;
 
-      node2Lat = 41.1607583;
-      node2Long = 8.6207115;
+      node2Lat = 46.1780375;
+      node2Long = 13.6026363;
 
-      node3Lat =  41.1607583;
-      node3Long = 8.6207115;
+      node3Lat =  46.1782024;
+      node3Long = 13.6009813;
 
-      node4Lat =  41.1607583;
-      node4Long = 8.6207115;
+      node4Lat =  46.1768169;
+      node4Long = 13.6040692;
 
-      node5Lat =  41.1607583;
-      node5Long = 8.6207115;
+      node5Lat =  46.1767835;
+      node5Long = 13.6047597;
 
       // node6Lat = 51.916080703822985;
       // node6Long = 4.476145158543535;

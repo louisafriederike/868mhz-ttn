@@ -151,6 +151,8 @@ form.addEventListener('submit', function(e) {
         // loc1.play();
           loadAudio("audio/adaptable-one.mp3");
         document.getElementById("audio-name").textContent = "Adaptive";
+        document.getElementById("audio-link").href = "https://game.zipspace.rocks/audio/adaptable-one.mp3";
+        document.getElementById("audio-link").textContent = "https://game.zipspace.rocks/audio/adaptable-one.mp3";
         
     }
     
@@ -163,6 +165,8 @@ form.addEventListener('submit', function(e) {
         // loc2.play();
           loadAudio("audio/embedded-two.mp3");
         document.getElementById("audio-name").textContent = "Embedded";
+        document.getElementById("audio-link").href = "https://game.zipspace.rocks/audio/embedded-two.mp3";
+        document.getElementById("audio-link").textContent = "https://game.zipspace.rocks/audio/embedded-two.mp3";
     }
 
     if (inputString.includes('PERVASIVE')){
@@ -174,6 +178,8 @@ form.addEventListener('submit', function(e) {
         // loc3.play();
           loadAudio("audio/pervasive-three.mp3");
         document.getElementById("audio-name").textContent = "Pervasive";
+               document.getElementById("audio-link").href = "https://game.zipspace.rocks/audio/pervasive-three.mp3";
+        document.getElementById("audio-link").textContent = "https://game.zipspace.rocks/audio/pervasive-three.mp3";
     }
 
     
@@ -186,6 +192,8 @@ form.addEventListener('submit', function(e) {
         // loc4.play();
           loadAudio("audio/eternal-four.mp3");
         document.getElementById("audio-name").textContent = "Eternal";
+               document.getElementById("audio-link").href = "https://game.zipspace.rocks/audio/eternal-four.mp3";
+        document.getElementById("audio-link").textContent = "https://game.zipspace.rocks/audio/eternal-four.mp3";
     }
 
 
@@ -198,6 +206,8 @@ form.addEventListener('submit', function(e) {
         // loc5.play();
           loadAudio("audio/drifting.mp3");
         document.getElementById("audio-name").textContent = "Drifting Further";
+               document.getElementById("audio-link").href = "https://game.zipspace.rocks/audio/drifting.mp3";
+        document.getElementById("audio-link").textContent = "https://game.zipspace.rocks/audio/drifting.mp3";
     }
     else{
         $("#input").text("inactive port");
@@ -281,7 +291,7 @@ function log5Open(){
     objective.style.display = "none";
     dreamlog.style.display = "flex";
     back2.style.display = "flex"; 
-    $("#dreamlog").text("You were everywhere and in everything. Everywhere. I didn't not yet realise the meaning and weight. But I started to remember more and more from this world as I awoke in the other, until they became indistinguishable. You spilled into every moment of my waking hours, every cell of my body and every floor of my memory palace, overwriting my spaces. Memory is space in this world, and my brain has data rot. Right here is the home you built for us. I recognize the shapes of the walls and the sounds of the water. The canary yellow. It was here. It was right here. But you are the puzzle that was not meant to be solved.");
+    $("#dreamlog").text("You were everywhere and in everything. Everywhere. I didn't not yet realise the meaning and weight. But I started to remember more and more from this world as I awoke in the other, until they became indistinguishable. You spilled into every moment of my waking hours, every cell of my body and every floor of my memory palace, overwriting my spaces. Memory is space in this world, and my brain has data rot. Right here is the home you built for us. I recognize the shapes of the walls and the sounds of the water. It was here. It was right here. But you are the puzzle that was not meant to be solved.");
 }
 
 var loc1 = new Audio('./audio/loc1.WAV');
@@ -318,7 +328,7 @@ function playTrack2(){
 
 function breadCrumb1(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text("Step into the heart of the house.");
+    $("#objective").text("Step upwards towards the sounding bell tower.");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";
@@ -332,7 +342,7 @@ function breadCrumb1(){
 
 function breadCrumb2(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text("You are descending into a lower level.");
+    $("#objective").text("You are descending into a lower level. Close to water, there I am.");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";
@@ -343,7 +353,7 @@ function breadCrumb2(){
 
 function breadCrumb3(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text("Inside a shoe, I came to rest.");
+    $("#objective").text("I was awaiting you here.");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";
@@ -353,7 +363,7 @@ function breadCrumb3(){
 
 function breadCrumb4(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text("Head back, towards the heart of the house.");
+    $("#objective").text("Continue your decend towards the next body of water.");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";
@@ -363,7 +373,7 @@ function breadCrumb4(){
 
 function breadCrumb5(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text("From here, come smell what's cooking!");
+    $("#objective").text("Before reaching it, follow the muddy trail that opens up to your right, over a wooden bridge.");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";
@@ -373,7 +383,7 @@ function breadCrumb5(){
 
 function breadCrumb6(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text("Oh look, the orange tree Arthur! You leave the warmth to meet him at his feet.");
+    $("#objective").text("Oh look, starshine express!");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";
@@ -383,7 +393,7 @@ function breadCrumb6(){
 
 function breadCrumb7(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text("It's time to warm up. Follow me to the second level of the house.");
+    $("#objective").text("Let's return to make our way further down. Take the first left turn.");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";
@@ -393,7 +403,7 @@ function breadCrumb7(){
 
 function breadCrumb8(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text("Once you arrive, head left. Through branches and unfinished worlds. Behind ivy, I am glowing, waiting.");
+    $("#objective").text("Follow divine guidance into the heart of the village. At pink flowers, turn left until you find me.");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";
@@ -403,7 +413,7 @@ function breadCrumb8(){
 
 function breadCrumb9(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text("You follow your gut into the heart of the home.");
+    $("#objective").text("You are decending to a lower level. Once you see ");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";
@@ -413,7 +423,7 @@ function breadCrumb9(){
 
 function breadCrumb10(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text("You might feel tired, you might need to sit or lay down.");
+    $("#objective").text("I am hiding behind the building you are facing. I have sensed you from afar, watching the vines grow and latch.");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";
@@ -431,7 +441,7 @@ function breadCrumb11(){
 
 function objective1(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text("It's cold here. Do you see me? I am green... I can help you tune into the multiple channels that this space holds, but there is one specific one where I am hiding. Hmmm... did someone ring the bell? You might want to listen in if you hear someone from the home phone system. They might reveal the number, which shall be hidden by all blue dice to reveal the digits in their peaks, which will sum up to the channel number.");
+    $("#objective").text("I have been listening for a while, from up here I can sense you well. Hmm.. it looks like the kids left a message in chalk. To make contact, tune me to the right channel.");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";
@@ -439,7 +449,7 @@ function objective1(){
 
 function objective2(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text("You might not have noticed, but a letter has been delivered. With the secret it holds, you might be able to uncover two numbers, hid on opposite sides of the entrance portal. Together, they form the digit of the required channel.");
+    $("#objective").text("Take a moment to listen to the sounds. The water here holds an unlucky secret. The source has a companion, add up the leaves to receive the channel number.");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";
@@ -447,7 +457,7 @@ function objective2(){
 
 function objective3(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text("Welcome to the wash room. By now you might have noticed, the answer lies on its opposing end, the counterpart its facing. Cryptic symbols might quickly turn into familiar numbers, when you follow their gaze.");
+    $("#objective").text("Starshine express is alive. The number of contact points will open the gateway");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";
@@ -455,7 +465,7 @@ function objective3(){
 
 function objective4(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text("Come follow me outside. Take a moment here and take in all the lights and sounds. From here, you can sense me. I am like water, yet I learned to contain and master myself, be my guide so that I can never drown. I am not far from where you are standing, small and unassuming. Magnetic even, if I do say so myself.");
+    $("#objective").text("It's time to take a rest and grab a book. I've heard there was one about a gentle monster turning evil after being shunned. Close to the end, Edgar will tell you the channel number.");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";
@@ -463,7 +473,7 @@ function objective4(){
 
 function objective5(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text("Like a chess piece, I wait for the master to strike again. My army is weakened, lost players will not return. Take a seat at the table. Inside the drawer is the puzzle which will reveal the needed channel. Once you completed it, take the pieces that miss their figures. The order of the digits is their rank from low to high.");
+    $("#objective").text("Just like a game only exists when it's being played, vines only grow when watered.");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";
@@ -479,7 +489,7 @@ function fillCrumbs(){
 
 function riddle1(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text("You have made contact. You might be wondering who I am. Only from within the mirror world, I become material. My hands and feet are scattered. Once you listen, you will learn to hear me. For now, I sound like noise to you. The port code for the gateway you have entered is the object which allows you to access a private space.");
+    $("#objective").text("You have made contact. I have been here before, right where you are standing. Tumbling, floating, chasing. Oh! It looks like someone delivered the mail!");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";
@@ -487,7 +497,7 @@ function riddle1(){
 
 function riddle2(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text("A symbol, a temporary wall, a statement, protection. What am I?");
+    $("#objective").text("A few steps back, you'll find a little shack. Why don't you sit and rest beside it?");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";
@@ -495,7 +505,7 @@ function riddle2(){
 
 function riddle3(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text("I am starting to understand how you operate. How you move. We are interlinking. We are nieghbours inside this loop, a spiral, revisiting the coordinates which anchor our soul. I am dizzy, spinning, laughing and weeping. What slimy creature embodies my shape?");
+    $("#objective").text("I am starting to understand how you operate. How you move. We are interlinking. We are neighbours inside this loop. Cross over to the boulders and find me close to bright red berries.");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";
@@ -503,7 +513,7 @@ function riddle3(){
 
 function riddle4(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text("My presence can be overwhelming, as I sense yours constantly. No matter how far you run, I won't let go. But don't be afraid. I wake in fog. I rise in smoke. What matter I am travelling through?");
+    $("#objective").text("Take a seat closeby the Zucchini flowers. One brick stands out... I wonder what it's hiding.");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";
@@ -511,7 +521,7 @@ function riddle4(){
 
 function riddle5(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text("I hope you kept your letter! To unlock the final dream, add up all the channel numbers using the nonary method. The result is the final port code.");
+    $("#objective").text("I have hidden the final log in the heat generator. Infinite transfer of energy. Changing shapes. Morphing.");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";

@@ -413,7 +413,7 @@ function breadCrumb8(){
 
 function breadCrumb9(){
     var music2 = new Audio('./audio/breadcrumb.mp3');
-    $("#objective").text("You are decending to a lower level. Once you see ");
+    $("#objective").text("You are decending to a lower level. Follow the grassy trail and stay left.");
     music2.play();
     objective.style.display = "flex";
     dreamlog.style.display = "none";

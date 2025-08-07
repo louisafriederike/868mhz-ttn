@@ -151,8 +151,8 @@ form.addEventListener('submit', function(e) {
         // loc1.play();
           loadAudio("audio/adaptable-one.mp3");
         document.getElementById("audio-name").textContent = "Adaptive";
-        document.getElementById("audio-link").href = "https://game.zipspace.rocks/audio/adaptable-one.mp3";
-        document.getElementById("audio-link").textContent = "https://game.zipspace.rocks/audio/adaptable-one.mp3";
+        //document.getElementById("audio-link").href = "https://game.zipspace.rocks/audio/adaptable-one.mp3";
+        //document.getElementById("audio-link").textContent = "https://game.zipspace.rocks/audio/adaptable-one.mp3";-->
         
     }
     
@@ -165,8 +165,8 @@ form.addEventListener('submit', function(e) {
         // loc2.play();
           loadAudio("audio/embedded-two.mp3");
         document.getElementById("audio-name").textContent = "Embedded";
-        document.getElementById("audio-link").href = "https://game.zipspace.rocks/audio/embedded-two.mp3";
-        document.getElementById("audio-link").textContent = "https://game.zipspace.rocks/audio/embedded-two.mp3";
+        //document.getElementById("audio-link").href = "https://game.zipspace.rocks/audio/embedded-two.mp3";
+        //document.getElementById("audio-link").textContent = "https://game.zipspace.rocks/audio/embedded-two.mp3";-->
     }
 
     if (inputString.includes('PERVASIVE')){
@@ -178,8 +178,8 @@ form.addEventListener('submit', function(e) {
         // loc3.play();
           loadAudio("audio/pervasive-three.mp3");
         document.getElementById("audio-name").textContent = "Pervasive";
-               document.getElementById("audio-link").href = "https://game.zipspace.rocks/audio/pervasive-three.mp3";
-        document.getElementById("audio-link").textContent = "https://game.zipspace.rocks/audio/pervasive-three.mp3";
+              // document.getElementById("audio-link").href = "https://game.zipspace.rocks/audio/pervasive-three.mp3";
+       // document.getElementById("audio-link").textContent = "https://game.zipspace.rocks/audio/pervasive-three.mp3";-->
     }
 
     
@@ -192,8 +192,8 @@ form.addEventListener('submit', function(e) {
         // loc4.play();
           loadAudio("audio/eternal-four.mp3");
         document.getElementById("audio-name").textContent = "Eternal";
-               document.getElementById("audio-link").href = "https://game.zipspace.rocks/audio/eternal-four.mp3";
-        document.getElementById("audio-link").textContent = "https://game.zipspace.rocks/audio/eternal-four.mp3";
+               //document.getElementById("audio-link").href = "https://game.zipspace.rocks/audio/eternal-four.mp3";
+        //document.getElementById("audio-link").textContent = "https://game.zipspace.rocks/audio/eternal-four.mp3";-->
     }
 
 
@@ -206,8 +206,8 @@ form.addEventListener('submit', function(e) {
         // loc5.play();
           loadAudio("audio/drifting.mp3");
         document.getElementById("audio-name").textContent = "Drifting Further";
-               document.getElementById("audio-link").href = "https://game.zipspace.rocks/audio/drifting.mp3";
-        document.getElementById("audio-link").textContent = "https://game.zipspace.rocks/audio/drifting.mp3";
+               //document.getElementById("audio-link").href = "https://game.zipspace.rocks/audio/drifting.mp3";
+        //document.getElementById("audio-link").textContent = "https://game.zipspace.rocks/audio/drifting.mp3";-->
     }
     else{
         $("#input").text("inactive port");

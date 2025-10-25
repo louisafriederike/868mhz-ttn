@@ -6,9 +6,9 @@
 
 body {
   font: 1.0em/1.6 'Inconsolata', monospace;
-  color:  #c9cdc0;
+  color:  #615aed;
   font-weight: 400;
-  background-color: rgb(183, 183, 183);
+  background-color: rgb(29, 26, 26);
   text-shadow: rgb(34, 255, 0);
   /* overflow-y: hidden;
   overflow-x: hidden; */
@@ -345,22 +345,57 @@ button:active{
   height: 100vh;
 
 }
+#audio-box{
+  display: block;
+  background-color: red;
+  margin-left:5em;
+  margin-right:5em;
+    margin-top:1em;
+  margin-bottom:1em;
+}
 
 #audiofile-intro{
   display: block;
+  background-color: rgba(255, 0, 0, 0.082);
 }
 #audiofile-1{
-  display: none;
+  display: block;
+  background-color: red;
 }
 #audiofile-2{
   display: none;
+  background-color: red;
 }
 #audiofile-3{
   display: none;
+  background-color: red;
 }
 #audiofile-4{
   display: none;
+  background-color: red;
 }
 #audiofile-5{
   display: none;
+  background-color: greenyellow;
+}
+
+.custom-progress-bar {
+  flex: 1;
+  margin: 0 5px;
+  height: 10px; /* Adjust height as needed */
+  background-color: orange; /* Background color of the progress bar */
+  position: relative;
+  cursor: pointer; /* Add cursor pointer for interaction */
+  border-radius: 2px; /* Rounded corners */
+  padding-bottom: 5px;
+}
+
+.custom-progress-bar-fill {
+  height: 100%;
+  background-color: #FF4800; /* Color of the filled portion of the progress bar */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%; /* Initial width, will be dynamically adjusted */
+  border-radius: 2px; /* Rounded corners, should match the progress bar */
 }

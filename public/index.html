@@ -321,12 +321,34 @@
                           
                                 </div>
                         </div>
+                         <div class="section" id="audioplayer">
+                         <div class="section" id="audio-box" style="text-align: center;">
+                           <p id="audio-name" style="color: black; font-style: italic; font-size: 1.2em; font-weight: bold;">objective</p>
+                        <audio id="myAudio" preload="auto">
+                        <source id="audioSource" src="audio/intro.WAV" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                     </audio>
+
+                     <!-- Audio Controls -->
+                     <div class="custom-audio-controls">
+                        <div class="custom-progress-bar" onclick="seek(event)">
+                           <div class="custom-progress-bar-fill"></div>
+                        </div>
+                        <br>
+                        <!-- Play/Pause and Replay Buttons -->
+                        <button id="startButton" onclick="togglePlay()">[play]</button>
+                        <button id="replayButton" onclick="replayAudio()">⏮</button>
+                     </div>
+                       <!--<a href="https://game.zipspace.rocks/audio/adaptable-one.mp3" style="text-align: left;" id="audio-link">https://game.zipspace.rocks/audio/intro.WAV</p>-->
+                              </div>
+                              </div> 
+                        
                         <div class="section" id="dreamlog">
 
-                            <p></p>  
-                            </div>
-                            <div class="section" id="back2" onclick="backAgain2()">
-                                ↪ log 
+                                             <p></p>  
+                        </div>
+                        <div class="section" id="back2" onclick="backAgain2()">
+                                                ↪ log 
                         </div>
                         <div class="section" id="objective">
                         <p>OBJECTIVE:<br>Did you ever sleepwalk? Moving through two realities simultaneously can be disorienting, even dangerous.
@@ -335,19 +357,19 @@
                         </div>
                         
                         <div class="section" id="log1">          
-                        <p onclick="log1Open()">LOG 1  03:02:00  01-10-22 CHANNEL 24<br></p>
+                        <p onclick="log1Open()">LOG 1  03:02:00  03-07-25 CHANNEL 22<br></p>
                         </div> 
                         <div class="section" id="log2">   
-                        <p onclick="log2Open()">LOG 2  02:42:00  02-10-22 CHANNEL 82<br></p>
+                        <p onclick="log2Open()">LOG 2  02:42:00  21-07-25 CHANNEL 15<br></p>
                         </div>
                         <div class="section" id="log3">             
-                        <p onclick="log3Open()">LOG 3  03:36:00  03-10-22 CHANNEL 62<br></p>
+                        <p onclick="log3Open()">LOG 3  03:36:00  29-07-25 CHANNEL 10<br></p>
                         </div>
                         <div class="section" id="log4">   
-                        <p onclick="log4Open()">LOG 4  03:86:00  05-10-22 CHANNEL 22<br></p>
+                        <p onclick="log4Open()">LOG 4  03:86:00  02-08-25 CHANNEL 7<br></p>
                         </div>
                         <div class="section" id="log5">                 
-                        <p onclick="log5Open()">LOG 5  06:86:00  06-10-22 CHANNEL 15<br></p>   
+                        <p onclick="log5Open()">LOG 5  06:86:00  06-08-25 CHANNEL 12<br></p>   
                         </div>              
                        
                         <div class="section" id="log">
@@ -385,8 +407,10 @@
       <!-- <video class="fullscreen-video" id="myVideo" autoplay="autoplay" muted loop>
          <source src="img/bg.m4v">   
      </video> -->
-     
+       
+
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="js/audio.js"></script>
         <script type="text/javascript" src="js/fence.js"></script>
         <script type="text/javascript" src="js/level.js"></script>
         <script type="text/javascript" src="js/input.js"></script>

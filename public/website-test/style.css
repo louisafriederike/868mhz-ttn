@@ -1,0 +1,357 @@
+@font-face {
+  font-family: mirage;
+  src:url("fonts/mirage.woff");
+}
+
+@media screen and (min-width: 601px) {
+
+
+html{  scroll-behavior: smooth;}
+body{
+  background-color:#0b0b0b;
+  text-align: left;
+  font-family: monospace;
+  font-style: bold;
+  font-size: 1.1em;
+  color: rgb(195, 192, 174);
+  overflow-x: hidden;
+  padding-bottom: 5vh;
+
+}
+
+.centered {
+  
+  border-width: 1px;
+  border-color: black;
+  box-shadow: 20px 20px 10px 5px grey;
+} 
+
+.vertical-menu {
+  width: 300px;
+  text-align: center;
+  position: sticky;
+  top: 30px;
+  right: 10px; 
+  font-weight: bold;
+  color: black;
+  font-size: 1.5em;
+  text-decoration: none;  
+}
+
+.vertical-menu {
+  width: 200px; /* Set a width if you like */
+}
+
+.vertical-menu a {
+  background-color: #eee; /* Grey background color */
+  color: black; /* Black text color */
+  display: block; /* Make the links appear below each other */
+  padding: 12px; /* Add some padding */
+  text-decoration: none; /* Remove underline from links */
+}
+
+.vertical-menu a:hover {
+  background-color: #ccc; /* Dark grey background on mouse-over */
+}
+
+.vertical-menu a.active {
+  background-color: #4CAF50; /* Add a green color to the "active/current" link */
+  color: white;
+}
+
+.description{   
+   max-width: 70ch;
+   top: 10px;
+   color: #0b0b0b;
+   font-weight: bold;
+   display: inline-block;
+   background-color: white;
+   visibility: hidden;
+}
+
+#myVideo {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  max-width: 100%; 
+  max-height: 100%;
+  overflow: none;
+  -webkit-animation: glow 3s ease-in-out infinite alternate;
+  -moz-animation: glow 3s ease-in-out infinite alternate;
+  animation: glow 3s ease-in-out infinite alternate;
+}
+
+#copy{
+  text-align: center;
+  color: rgb(41, 55, 122);
+}
+
+.teaser{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+}
+
+.teaser:hover{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+}
+
+#x {
+  top: 0;
+  height: 100vh;
+  position: absolute;
+  width: 100vw; 
+}
+
+#x img, 
+#x  a{
+  width: 10vw;
+  position: absolute;
+  
+ }
+
+/* 
+#x .icon {
+  position: absolute;
+  z-index: 2;
+  width: 10vw;
+}
+
+#x .icon:hover {
+  z-index: 2;
+  position: fixed;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40vw;
+} */
+
+#intro {
+  
+  max-width: 60ch;
+  color: rgb(0, 88, 255);
+  text-shadow: 0 0 1.5px #94a0df;
+  margin: 2em;
+  margin-bottom: 1em;
+}
+
+.project-text {
+  
+  max-width: 60ch;
+  color: rgb(0, 88, 255);
+  text-shadow: 0 0 1.5px #94a0df;
+  margin-left: 1em;
+  /* margin-bottom: 1em; */
+}
+
+.project{
+  /* height: 100vh; */
+  /* padding-bottom: 5vh;
+  padding-top: 5vh;
+  margin: 5px; */
+}
+
+.title{
+  font-family: monospace;
+  font-size: 5em;
+  color: rgb(251, 0, 0);
+  text-shadow: 0 0 5px #e3b287;
+  background-color: #0b0b0b;
+}
+
+.project-title{
+  /* margin-top: 1em; */
+  font-family: monospace;
+  font-size: 2em;
+  color: rgb(0, 88, 255);
+  text-shadow: 0 0 1.5px #94a0df;
+  
+}
+.subtitle{
+  font-family: monospace;
+  font-size: 1em;
+  color: rgb(0, 88, 255);
+  text-shadow: 0 0 1.5px #94a0df;
+  ;
+}
+
+marquee{
+  position: sticky;
+  top: 0px;
+  background-color: #ff0000;
+  padding-bottom: 4px;
+  width: 100vw;
+}
+
+a:link{
+  color:rgb(255, 203, 0);
+  text-decoration: none;
+}
+
+a:hover{
+  color:rgb(0, 88, 255);
+}
+
+a:visited{
+  color:rgb(168, 133, 0)
+}
+
+#start
+{height: 100vh;
+
+top:10px;
+}
+
+}
+
+@media screen and (max-width: 600px) {
+  html{  scroll-behavior: smooth;}
+
+  body{
+    background-color:#0b0b0b;
+    text-align: left;
+    font-family: monospace;
+    font-style: bold;
+    font-size: 5vw;
+    color: rgb(195, 192, 174);
+    overflow-x: hidden;
+  
+  }
+  
+  .centered {
+    
+    border-width: 1px;
+    border-color: black;
+    box-shadow: 20px 20px 10px 5px grey;
+  } 
+  
+  
+  .description{   
+     max-width: 70ch;
+     top: 10px;
+     color: #0b0b0b;
+     font-weight: bold;
+     display: inline-block;
+     background-color: white;
+     visibility: hidden;
+  }
+
+  
+  #copy{
+    text-align: center;
+    color: rgb(41, 55, 122);
+  }
+  
+  .teaser{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+
+  
+  #x {
+    top: 0;
+    height: 100vh;
+    position: absolute;
+    width: 100vw; 
+  }
+  
+  #x img, 
+  #x  a{
+    width: 30vw;
+    position: absolute;
+   }
+  
+  /* 
+  #x .icon {
+    position: absolute;
+    z-index: 2;
+    width: 10vw;
+  }
+  
+  #x .icon:hover {
+    z-index: 2;
+    position: fixed;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40vw;
+  } */
+  
+  #intro {
+    
+    max-width: 60ch;
+    color: rgb(0, 88, 255);
+    text-shadow: 0 0 1.5px #94a0df;
+    margin: 2em;
+    margin-bottom: 1em;
+  }
+  
+  .project-text {
+    
+    max-width: 60ch;
+    color: rgb(0, 88, 255);
+    text-shadow: 0 0 1.5px #94a0df;
+    margin-left: 1em;
+    margin-bottom: 1em;
+    padding: 1em;
+  }
+  
+  .title{
+    font-family: monospace;
+    font-size: 2em;
+    color: rgb(0, 88, 255);
+    text-shadow: 0 0 1.5px #94a0df;
+    background-color: #0b0b0b;
+    padding-bottom: 1em;
+  }
+  
+  .project-title{
+    margin-top: 1em;
+    font-family: monospace;
+    font-size: 2em;
+    color: rgb(0, 88, 255);
+    text-shadow: 0 0 1.5px #94a0df;
+    
+  }
+  .subtitle{
+    font-family: monospace;
+    font-size: 1em;
+    color: rgb(0, 88, 255);
+    text-shadow: 0 0 1.5px #94a0df;
+    
+  }
+  
+  marquee{
+    position: sticky;
+    top: 0px;
+    background-color: #0b0b0b;
+    padding-bottom: 4px;
+    width: 100vw;
+  }
+  
+  a:link{
+    color:rgb(255, 203, 0);
+    text-decoration: none;
+  }
+  
+  a:hover{
+    color:rgb(0, 88, 255);
+  }
+  
+  a:visited{
+    color:rgb(168, 133, 0)
+  }
+  
+  #start
+  {height: 100vh;
+  
+  top:10px;
+  }
+  
+}

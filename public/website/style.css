@@ -1,0 +1,302 @@
+@font-face {
+  font-family: 'necto';
+  src: url('NectoMono-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'absans';
+  src: url('Absans-Regular.woff2') format('woff2');
+}
+
+* {
+  font-family:'necto' !important;
+  margin: 0;
+  padding: 0;
+  
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  text-align: left;
+  font-family: 'necto';
+  color: #eef3ec;
+  overflow-x: hidden;
+  padding-bottom: 5vh;
+ 
+  
+}
+
+.portfolio-text{ max-width: 80ch;}
+
+#y {
+  position: static;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* Set the height to cover the entire screen */
+  z-index: 2; /* Set a high z-index to make sure it's above other elements */
+}
+
+
+
+#x {
+  position: fixed;
+  top: 0;
+  left: 50vw;
+  width: 100%;
+  height: 100vh; /* Set the height to cover the entire screen */
+  z-index: -1; /* Set a high z-index to make sure it's above other elements */
+}
+
+.centered {
+  border-width: 1px;
+  border-color: black;
+  box-shadow: 20px 20px 10px 5px grey;
+}
+
+.teaser {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  margin-bottom: 1em;
+}
+
+#x img,
+#x a {
+  position: absolute;
+  width: 5vw;
+}
+
+#y img,
+#y a {
+  position: absolute;
+  width: 10vw;
+}
+
+.project-text {
+  max-width: 60ch;
+  color: #e3ebe1;
+  /* text-shadow: 0 0 1.5px #94a0df; */
+  margin-left: 1.8em;
+  padding: 1em;
+  font-family:'Roboto', monospace !important;
+  /* font-style: italic; */
+  margin-left: 1em;
+ 
+}
+
+
+/* Desktop Styles */
+@media screen and (min-width: 601px) {
+  body {
+    background-color: #161517;
+    font-size: 1.015em;
+  }
+
+  .teaser {
+    width: 35%;
+  }
+  .teaser :hover{
+    width: 80%;
+  }
+
+
+  #x img,
+  #x a {
+    width: 10vw;
+  }
+  #x img :hover,
+  #x a :hover {
+    opacity: 20%;
+  }
+}
+
+.slider  {
+  width: 10vw;
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 600px) {
+
+  body {
+    background-color: #161517;
+    font-size: 1em;
+    padding: 2px;
+    padding-left: 1px;
+   
+   
+  
+  }
+
+img{ max-width: 100vw;}
+
+#y{ max-width: 100vw;}
+
+
+.project-text{
+  margin-left: 1em;
+}
+
+  .teaser {
+    width: 90%;
+  }
+
+  #x img,
+  #x a {
+    width: 30vw;
+  }
+
+  #index {display: none;
+
+  }
+}
+
+/* Common Styles for Both Desktop and Mobile */
+.description {
+  max-width: 70ch;
+  top: 10px;
+  color: #0b0b0b;
+  font-weight: bold;
+  display: inline-block;
+  background-color: white;
+  visibility: hidden;
+  margin-left: 1em;
+}
+
+#copy {
+  text-align: center;
+  color: rgb(41, 55, 122);
+}
+
+#intro {
+  max-width: 52ch;
+  font-family:'Roboto', monospace !important;
+  font-style: italic;
+  color: rgb(0, 88, 255);
+  text-shadow: 0 0 1.5px #94a0df;
+  margin-left: 2em;
+  margin-bottom: 1em;
+  z-index: 1;
+  font-size: 1.2em;
+}
+
+
+.title {
+  font-family: 'necto';
+  font-size: 1.2em;
+  color: #d4e5cf;
+  background-color: #000000;
+  text-shadow: 0 0 1.5px #94a0df;
+ 
+}
+
+.project-title {
+  font-family: 'Monomaniac One', sans-serif;
+  font-size: 2em;
+  color: rgb(0, 88, 255);
+  text-shadow: 0 0 1.5px #94a0df;
+  margin-left: 1em;
+}
+
+.subtitle {
+  font-family: monospace;
+  font-size: 1em;
+  color: rgb(0, 88, 255);
+  text-shadow: 0 0 1.5px #94a0df;
+  margin-left: 1em;
+}
+
+marquee {
+  position: sticky;
+  top: 0px;
+  background-color: #ff0000;
+  padding: 0px;
+  width: 100vw;
+}
+
+a:link {
+  color: rgb(147, 255, 230);
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgb(0, 88, 255);
+}
+
+a:visited {
+  color: rgb(143, 197, 185);
+}
+
+#start {
+  /* height: 100vh; */
+  /* top: 10px; */
+}
+
+#index {
+  position: fixed;
+  font-family: 'Monomaniac One', sans-serif;
+  top: 50%;
+  right: 0px;
+  height: 100vh;
+  transform: translateY(-50%);
+  /* background-color: rgba(74, 88, 78, 0.04); */
+  padding: 2vw;
+  margin-top: 5vh;
+  max-width: 30vw;
+  color: #fff5f5;
+  overflow: scroll;
+  font-size: 1.2em;
+
+}
+
+#index a {
+  display: block;
+  /* padding: 10px; */
+  margin-bottom: 10px;
+  color: rgb(142, 181, 255);
+  text-shadow: 0 0 1.5px #94a0df;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s #d4e5cf ease;
+}
+
+#index a:hover {
+  background-color: rgb(0, 0, 0);
+  color:#d4e5cf;
+}
+
+.info-bar{
+  position: sticky;
+  top: 0px;
+  padding: 0px;
+  width: 100vw;
+  left: 0px;
+  background-color: #ffffff;
+  z-index: 2;
+}
+
+.relative{
+  position: relative;
+  background-color: #ffffff;
+}
+
+#one{
+  position: absolute;
+  right: 1vw;
+}
+
+
+#two{
+  position: absolute;
+  right: 15vw;
+}
+
+
+
+.portfolio-text{
+max-width: 90ch;
+}
